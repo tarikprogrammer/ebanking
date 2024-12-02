@@ -1,0 +1,15 @@
+{
+  "NAVBAR": {
+    "HOME": "Home",
+    "WALLET": "Wallet",
+    "TRANSACTIONS": "Transactions",
+    "BILLS": "Bills",
+    "SIGN_IN": "Sign in"
+  },
+  "WELCOME_SECTION": {
+    "TITLE": "Welcome to Our E-Banking Platform",
+    "DESCRIPTION": "Experience seamless and secure online banking services at your fingertips. Manage your finances conveniently from anywhere, anytime.",
+    "SIGN_IN": "Sign in Now",
+    "LEARN_MORE": "Learn more"
+  }
+}

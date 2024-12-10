@@ -1,0 +1,126 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "about": "À propos de nous",
+    "service": "Services",
+    "contact": "Contact nous",
+    "login": "Se Connecter"
+  },
+  "header": {
+    "title": "Bienvenue sur notre plateforme de banque en ligne",
+    "subTitle": "Vivez une expérience bancaire en ligne fluide et sécurisée à portée de main. Gérez vos finances de manière pratique, où que vous soyez, à tout moment.",
+    "login": "Connectez-vous",
+    "learnMore": "En savoir plus"
+  },
+  "features": {
+    "part1": {
+      "title1": "Rencontrez l'argent",
+      "title2": "sans frontières",
+      "subTitle": "Nous construisons le meilleur moyen de transférer et de gérer l'argent dans le monde. Frais minimums. Facilité maximale. Rapidité totale.",
+      "button": "En savoir plus"
+    },
+    "part2": {
+      "title": "Transactions d'argent sans effort, à tout moment",
+      "subTitle": "FlowPay simplifie les transactions d'argent en ligne avec rapidité, sécurité et commodité. Que vous gériez des factures, transfériez des fonds ou suiviez des paiements, FlowPay garantit une expérience fluide et conviviale sur tous les appareils."
+    },
+    "partenaire": {
+      "title": "Payez vos factures en ligne sans quitter votre domicile et en toute sécurité",
+      "subTitle": "Des paiements rapides, simples et sécurisés depuis le confort de votre maison."
+    }
+  },
+  "agentfeatures": {
+    "title": "Ouvrez votre compte avec notre agent : Simple et rapide",
+    "subTitle": "Notre agent vous guidera tout au long du processus de création de compte, garantissant une expérience fluide et efficace. Que vous soyez à la maison ou en déplacement, vous pouvez facilement fournir les documents nécessaires et compléter le processus sans avoir à vous rendre dans une agence bancaire."
+  },
+  "contact": {
+    "title": "VOUS AVEZ DES QUESTIONS ?",
+    "phone": "APPELEZ-NOUS",
+    "email": "ENVOYEZ-NOUS UN EMAIL",
+    "map": "TROUVEZ-NOUS"
+  },
+  "loginForm": {
+    "title": "Connectez-vous à votre compte",
+    "field1": "Adresse e-mail",
+    "field2": "Mot de passe",
+    "forgotPassword": "Mot de passe oublié ?",
+    "login": "Se connecter"
+  },
+  "enterYourEmailToResetPassword": {
+    "title": "Entrez votre e-mail pour réinitialiser le mot de passe",
+    "email": "Adresse e-mail",
+    "login": "Envoyer"
+  },
+  "enterNewPassword": {
+    "title": "Entrez un nouveau mot de passe",
+    "newPassword": "Nouveau mot de passe",
+    "confirmPassword": "Confirmer le mot de passe",
+    "login": "Soumettre"
+  },
+  "agent": {
+    "addClient": {
+      "firstname": "Prénom",
+      "lastname": "Nom de famille",
+      "email": "Adresse e-mail",
+      "confirmEmail": "Confirmer l'adresse e-mail",
+      "title": "Informations personnelles",
+      "button": "Suivant",
+      "identityDocument": "Pièce d'identité",
+      "phone": "Numéro de téléphone",
+      "numberIdentityDocument": "N° de pièce d'identité",
+      "dateNaissance": "Date de naissance",
+      "address": "Adresse",
+      "CommercialRegisterRegistrationNumber": "Numéro d'immatriculation au registre de commerce",
+      "TaxIdentificationNumber": "N° de patente",
+      "createClient": "Créer",
+      "back": "Retour"
+    },
+    "souscriptions": {
+      "title": "Ouverture d'un compte de paiement",
+      "subTitle": "Informations personnelles",
+      "firstname": "Prénom",
+      "lastname": "Nom de famille",
+      "email": "Adresse e-mail",
+      "phone": "Numéro de téléphone",
+      "product": "Sélectionner un produit",
+      "account": {
+        "account1": "Hssab 1 - Plafond : 200 MAD",
+        "account2": "Hssab 2 - Plafond : 10 000 MAD",
+        "account3": "Hssab 3 - Plafond :  15 000 MAD",
+        "account4": "Hssab 4 - Plafond :  20 000 MAD"
+      },
+      "informationClient": "Informations Client",
+      "openAccount":"Ouvrir un compte"
+    },
+    "consultAccount": {
+      "title": "Consultation des comptes clients et gestion des cartes virtuelles",
+      "search": "Chercher par Email-Addresse ou Numero de télephone",
+      "action1": "Consulter",
+      "action2": "Modifier"
+    }
+  },
+  "LearMore": {
+    "title": "En savoir plus",
+    "wl": {
+      "section1": {
+        "title": "Qu'est-ce que FlowPay ?",
+        "desc": "FlowPay est une application d'e-banking qui vous permet de gérer vos finances personnelles, effectuer des paiements et consulter vos transactions en toute sécurité."
+      },
+      "section2": {
+        "title": "Qui peut utiliser FlowPay ?",
+        "desc": "Toute personne possédant un compte bancaire auprès des banques partenaires."
+      },
+      "section3": {
+        "title": "FlowPay est-il disponible en plusieurs langues ?",
+        "desc": "Oui, FlowPay prend en charge plusieurs langues, notamment le français et l'anglais."
+      },
+      "section4": {
+        "title": "FlowPay est-il sécurisé ?",
+        "desc": "Absolument. FlowPay utilise des protocoles de cryptage avancés (SSL/TLS) et une authentification à deux facteurs (2FA) pour garantir la sécurité de vos données."
+      },
+      "section5": {
+        "title": "Comment créer un compte sur FlowPay ?",
+        "desc": "Accédez à notre plateforme, inscrivez-vous avec votre adresse e-mail et liez vos comptes bancaires en suivant les étapes guidées."
+      }
+    }
+  }
+}

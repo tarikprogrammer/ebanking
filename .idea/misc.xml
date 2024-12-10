@@ -5,10 +5,23 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/api-agent/pom.xml" />
+        <option value="$PROJECT_DIR$/api-client/pom.xml" />
+        <option value="$PROJECT_DIR$/api-backOffice/pom.xml" />
+        <option value="$PROJECT_DIR$/api-cmi/pom.xml" />
+        <option value="$PROJECT_DIR$/Client-api/pom.xml" />
+        <option value="$PROJECT_DIR$/agent-api/pom.xml" />
+        <option value="$PROJECT_DIR$/Agentapi/pom.xml" />
       </list>
     </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/agent-api/pom.xml" />
+        <option value="$PROJECT_DIR$/api-agent/pom.xml" />
+        <option value="$PROJECT_DIR$/api-client/pom.xml" />
+      </set>
+    </option>
   </component>
-  <component name="ProjectRootManager">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_23" default="true" project-jdk-name="openjdk-23" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
 </project>

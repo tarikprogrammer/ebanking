@@ -1,0 +1,130 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About us",
+    "service": "Services",
+    "contact": "Contact us",
+    "login": "Sign in"
+  },
+  "header": {
+    "title": "Welcome to Our E-Banking Platform",
+    "subTitle": "Experience seamless and secure online banking services at your fingertips. Manage your finances conveniently from anywhere, anytime.",
+    "login": "Sign in Now",
+    "learnMore": "Learn more"
+  },
+  "features": {
+    "part1": {
+      "title1": "Meet money",
+      "title2": "without borders",
+      "subTitle": "We’re building the best way to move and manage the world’s money. Min fees. Max ease. Full speed.",
+      "button": "Learn more"
+
+    },
+    "part2": {
+      "title": "Effortless Money Transactions Anytime",
+      "subTitle": "FlowPay simplifies online money transactions with speed, security, and convenience. Whether you’re managing bills, transferring funds, or tracking payments, FlowPay ensures a seamless and user-friendly experience across all devices.\n\n"
+    },
+    "partenaire": {
+      "title": "Pay your bill online without leaving home and in a secure manner",
+      "subTitle": "Quick, easy, and safe payments from the comfort of your home."
+    }
+  },
+  "agentfeatures": {
+    "title": "Open Your Account with Our Agent: Simple and Fast",
+    "subTitle": "Our agent will guide you through the entire account creation process, ensuring a smooth and efficient experience. Whether you’re at home or on the go, you can easily provide the necessary documents and complete the process without visiting a bank branch."
+  },
+  "contact": {
+    "title": "DO YOU HAVE ANY QUESTIONS?",
+    "phone": "CALL US",
+    "email": "SEND US AN EMAIL",
+    "map": "FIND US"
+  },
+  "loginForm": {
+    "title": "Sign in to your account",
+    "field1": "Email Address",
+    "field2": "Password",
+    "login": "Sign in",
+    "forgotPassword": "forgot your password ?"
+  },
+  "enterYourEmailToResetPassword": {
+    "title": "Enter your Email to Reset Password",
+    "email": "Email address",
+    "login": "Submit"
+  },
+  "enterNewPassword": {
+    "title": "Enter New Password",
+    "newPassword": "New Password",
+    "confirmPassword": "Confirm Password",
+    "login": "Submit"
+  },
+  "agent": {
+    "addClient": {
+      "firstname": "First name",
+      "lastname": "Last name",
+      "email": "Email address",
+      "confirmEmail": "Confirm Email address",
+      "title": "Personal Information",
+      "button": "Next",
+      "identityDocument": "Identity document",
+      "phone": "Phone number",
+      "numberIdentityDocument": "N Identity document",
+      "dateNaissance": "Date of birth",
+      "address": "Address",
+      "CommercialRegisterRegistrationNumber": "Commercial register registration number",
+      "TaxIdentificationNumber": "Tax identification number",
+      "createClient": "Create",
+      "back": "Back"
+
+    },
+    "souscriptions": {
+      "title": "Opening a payment account",
+      "subTitle": "Personal Informations",
+      "firstname": "First name",
+      "lastname": "Last name",
+      "email": "Email address",
+      "phone": "Phone number",
+      "product": "Select a product",
+      "account": {
+        "account1": "Hssab 1 - Limit : 20$",
+        "account2": "Hssab 2 - Limit : 1 000$",
+        "account3": "Hssab 3 - Limit : 1 500$",
+        "account4": "Hssab 4 - Limit : 2 000$"
+      },
+      "informationClient" :"Client Information",
+      "openAccount":"Open an account"
+    },
+    "consultAccount": {
+      "title": "Consultation of client accounts and management of virtual cards",
+      "search": "Search by Email-Address or Phone nunber",
+      "action1": "Review",
+      "action2": "Edit"
+    }
+  },
+  "LearMore": {
+    "title": "Learn More",
+    "wl": {
+      "section1": {
+        "title": "What is FlowPay ?",
+        "desc": "FlowPay is an e-banking application that allows you to manage your personal finances, make payments, and securely view your transactions."
+      },
+      "section2": {
+        "title": "Who can use FlowPay?",
+        "desc": "Anyone with a bank account at partner banks."
+      },
+      "section3": {
+        "title": "Is FlowPay available in multiple languages?",
+        "desc": "Yes, FlowPay supports multiple languages, including French, English."
+      },
+      "section4": {
+        "title": "Is FlowPay secure ?",
+        "desc": "Absolutely. FlowPay uses advanced encryption protocols (SSL/TLS) and two-factor authentication (2FA) to ensure your data is safe."
+      },
+      "section5": {
+        "title": "How do I create an account on FlowPay?",
+        "desc": "Check our Platform, register with your email address, and link your bank accounts by following the guided steps."
+      }
+    }
+  }
+
+
+}

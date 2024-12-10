@@ -1,0 +1,36 @@
+<div class="navbar bg-white w-[90%] mx-auto shadow-md rounded-2xl ">
+  <div class="flex-1">
+    <a routerLink="" class="text-[22px] font-bold ml-8 cursor-pointer">Flow<span class="text-accent">Pay</span></a>
+  </div>
+  <div class="flex  items-center  justify-between mr-8">
+    <div class="flex items-center gap-10">
+      <a (click)="goTo('header')" class="cursor-pointer hover:text-accent duration-500">{{'nav.home' | translate}}</a>
+      <a (click)="goTo('feature')" class="cursor-pointer hover:text-accent duration-500">{{'nav.about' | translate}}</a>
+      <a (click)="goTo('featureList')" class="cursor-pointer hover:text-accent  duration-500">{{'nav.service' | translate}}</a>
+      <a (click)="goTo('contact')" class="cursor-pointer hover:text-accent duration-500">{{'nav.contact' | translate}}</a>
+    </div>
+    <div class="flex   items-center ml-44  gap-8 relative">
+      <button (click)="select()" class="flex items-center gap-1">
+        <img class="w-[30px] h-[30px] rounded-full" [src]="lang" >
+        <i class='bx bxs-chevron-down'></i>
+      </button>
+      @if(isSelected){
+        <ul class="flex flex-col gap-3 absolute top-[60px] left-[-9px] bg-white shadow-lg rounded  p-[15px]">
+          <li (click)="selectfR('fr')" class="cursor-pointer">
+            <img class="w-[30px] h-[30px] rounded-full" src="https://img.freepik.com/vecteurs-libre/illustration-du-drapeau-france_53876-27099.jpg?semt=ais_hybrid">
+          </li>
+          <li (click)="selectfR('en')" class="cursor-pointer">
+            <img class="w-[30px] h-[30px] rounded-full" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Flag_of_the_United_Kingdom_%283-5%29.svg/2560px-Flag_of_the_United_Kingdom_%283-5%29.svg.png">
+          </li>
+        </ul>
+      }
+
+      <!--<button class="btn btn-accent" (click)="login()">{{'nav.login' | translate}}</button>-->
+      <div class="avatar online">
+        <div class="w-[40px] rounded-full cursor-pointer">
+          <img src="https://t4.ftcdn.net/jpg/05/49/98/39/360_F_549983970_bRCkYfk0P6PP5fKbMhZMIb07mCJ6esXL.jpg" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

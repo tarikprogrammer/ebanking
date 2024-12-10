@@ -1,13 +1,16 @@
 import { Component } from '@angular/core';
-import {HearderComponent} from "../../components/hearder/hearder.component";
-import {FacturesLitsComponent} from "../../components/factures-lits/factures-lits.component";
-import {NavComponent} from "../../components/nav/nav.component";
-import {FeautureComponent} from "../../components/feauture/feauture.component";
-import {AgentComponent} from "../../components/agent/agent.component";
+import {HearderComponent} from "../../components/UI DEFAULT/hearder/hearder.component";
+import {FacturesLitsComponent} from "../../components/UI DEFAULT/factures-lits/factures-lits.component";
+import {NavComponent} from "../../components/UI DEFAULT/nav/nav.component";
+import {FeautureComponent} from "../../components/UI DEFAULT/feauture/feauture.component";
+import {AgentComponent} from "../../components/UI DEFAULT/agent/agent.component";
 import {
   FREQUENTLYASKEDQUESTIONSComponent
-} from "../../components/frequently-asked-questions/frequently-asked-questions.component";
-import {FooterComponent} from "../../components/footer/footer.component";
+} from "../../components/UI DEFAULT/frequently-asked-questions/frequently-asked-questions.component";
+import {FooterComponent} from "../../components/UI DEFAULT/footer/footer.component";
+import {AddNewClientComponent} from "../../components/UI AGENT/add-new-client/add-new-client.component";
+import {SouscriptionsComponent} from "../../components/UI AGENT/souscriptions/souscriptions.component";
+import {ConsultAccountComponent} from "../../components/UI AGENT/consult-account/consult-account.component";
 
 @Component({
   selector: 'app-home',
@@ -19,7 +22,10 @@ import {FooterComponent} from "../../components/footer/footer.component";
     FeautureComponent,
     AgentComponent,
     FREQUENTLYASKEDQUESTIONSComponent,
-    FooterComponent
+    FooterComponent,
+    AddNewClientComponent,
+    SouscriptionsComponent,
+    ConsultAccountComponent
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'

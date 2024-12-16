@@ -57,6 +57,7 @@
     "login": "Soumettre"
   },
   "agent": {
+    "account": "Ajouter Nouveau Client",
     "addClient": {
       "firstname": "Prénom",
       "lastname": "Nom de famille",
@@ -121,6 +122,15 @@
         "title": "Comment créer un compte sur FlowPay ?",
         "desc": "Accédez à notre plateforme, inscrivez-vous avec votre adresse e-mail et liez vos comptes bancaires en suivant les étapes guidées."
       }
+    }
+  },
+  "user": {
+    "profile": {
+      "profile": "Mon Profil",
+      "openAccount": "Ouvrir un compte",
+      "manageAccount": "Gérer le compte",
+      "help": "Aide",
+      "logout": "Se déconnecter"
     }
   }
 }

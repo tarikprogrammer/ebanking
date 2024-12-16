@@ -42,7 +42,7 @@ public class AgentServicesImp implements AgentService{
     @Override
     public void sendOTPtoResetPassword(String email) {
         Agent agent = agentRepository.findByEmail(email).orElseThrow(()->new EntityNotFoundException("Email not found"));
-        Path path = Paths.get("/Users/tarik/Desktop/ebanking/api-backOffice/src/main/resources/templates/sendEmailOtp.html");
+        Path path = Paths.get("/Users/tarik/Desktop/ebanking/Agentapi/src/main/resources/templates/sendLinkPassword.html");
         try {
             String htmlContent = new String(Files.readAllBytes(path));
             int otp = generateOtp();
@@ -96,6 +96,19 @@ public class AgentServicesImp implements AgentService{
         agentRepository.save(agent);
 
         return true;
+    }
+
+    @Override
+    public boolean verifyEmail(String email) {
+
+        return agentRepository.findByEmail(email).isPresent() ? true :false;
+    }
+
+    @Override
+    public void changeLanguage(String language,String email) {
+        Agent agent = agentRepository.findByEmail(email).orElseThrow(()->new EntityNotFoundException("agent not found "));
+        agent.setLanguage(language);
+        agentRepository.save(agent);
     }
 
     private int generateOtp(){

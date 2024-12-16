@@ -58,6 +58,7 @@
     "login": "Submit"
   },
   "agent": {
+    "account": "Add New Client",
     "addClient": {
       "firstname": "First name",
       "lastname": "Last name",
@@ -123,6 +124,15 @@
         "title": "How do I create an account on FlowPay?",
         "desc": "Check our Platform, register with your email address, and link your bank accounts by following the guided steps."
       }
+    }
+  },
+  "user": {
+    "profile": {
+      "profile": "My Profile",
+      "openAccount": "Open Account",
+      "manageAccount": "Manage Account",
+      "help": "Help",
+      "logout": "Sign out"
     }
   }
 

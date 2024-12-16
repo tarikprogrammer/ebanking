@@ -11,6 +11,7 @@ import {FooterComponent} from "../../components/UI DEFAULT/footer/footer.compone
 import {AddNewClientComponent} from "../../components/UI AGENT/add-new-client/add-new-client.component";
 import {SouscriptionsComponent} from "../../components/UI AGENT/souscriptions/souscriptions.component";
 import {ConsultAccountComponent} from "../../components/UI AGENT/consult-account/consult-account.component";
+import {DefaultUiAgentUiService} from "../../services/default-ui-agent-ui.service";
 
 @Component({
   selector: 'app-home',
@@ -31,5 +32,6 @@ import {ConsultAccountComponent} from "../../components/UI AGENT/consult-account
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
-
+  constructor(public comm:DefaultUiAgentUiService) {
+  }
 }

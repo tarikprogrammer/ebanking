@@ -37,4 +37,9 @@ public class AgentController {
     public ResponseEntity<Boolean>updatePassword(@RequestBody Map<String,String>json){
         return ResponseEntity.ok(agentService.updatePassword(json.get("password"),json.get("email")));
     }
+
+    @GetMapping("/agent/{email}")
+    public ResponseEntity<Boolean>getAgent(@PathVariable String email){
+        return ResponseEntity.ok(agentService.verifyEmail(email));
+    }
 }

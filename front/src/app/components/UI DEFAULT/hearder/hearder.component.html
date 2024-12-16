@@ -4,7 +4,11 @@
       <h1 class="text-[44px]  w-[80%] text-center ">{{'header.title' | translate}}</h1>
       <p class="text-xl w-[80%] text-center text-gray-500">{{'header.subTitle' | translate}}</p>
       <div class="flex items-center justify-center gap-3">
-        <button class="btn btn-accent w-[80%]" (click)="login()">{{'header.login' | translate}}</button>
+        @if(this.goToAgent){
+          <button (click)="ajouterClient()"  class="btn btn-accent w-[80%]" >{{'agent.account' | translate}}</button>
+        }  @else {
+          <button class="btn btn-accent w-[80%]" (click)="login()">{{'header.login' | translate}}</button>
+        }
         <button class="btn btn-outline w-[80%]" routerLink="more">{{'header.learnMore' | translate}}</button>
       </div>
     </div>

@@ -23,6 +23,8 @@ export class LoginComponent implements OnInit{
     loginErrors?:any={};
     loginSuccess?:any={};
     error?:any = {};
+    goToAgent:boolean=false;
+    goToClient:boolean =false;
 
   ngOnInit(): void {
     this.form =this.fb.group({
@@ -42,15 +44,30 @@ export class LoginComponent implements OnInit{
    login(){
     this.agent.email=this.form.get("email")?.value;
     this.agent.password=this.form.get("password")?.value;
-
+    this.goToAgent = true;
     this.agentService.login(this.agent).subscribe(
       (response:any)=>{
         this.loginSuccess= response;
-        console.log(this.loginSuccess);
+       if(this.goToAgent){
+         // go to Agent
+         sessionStorage.setItem("goToAgent",'true');
+         sessionStorage.setItem("agent",JSON.stringify(response));
+         this.router.navigateByUrl("");
+       }
+       if(this.goToClient){
+         // go to Client
+         sessionStorage.setItem("goToClient",'true');
+         sessionStorage.setItem("client",JSON.stringify(response));
+         this.router.navigateByUrl("");
+       }
+
       },(error:any)=>{
         this.loginErrors = error?.error?.errors || {}
-        this.error = error;
-        console.log(this.error)
+        this.error = error
+        if(this.error && this.agent.email && this.agent.password){
+          this.goToAgent =false;
+          console.log("check client ")
+        }
       }
 
     )

@@ -28,4 +28,14 @@ public class Client {
     private String password;
     @Lob
     private byte[] imageIdentity;
+
+    @OneToOne(mappedBy = "client")
+    private Otp otp;
+
+    @OneToOne(mappedBy = "client")
+    private Account account;
+
+
+    @OneToOne(mappedBy = "client")
+    private TemporaryCard temporaryCard;
 }

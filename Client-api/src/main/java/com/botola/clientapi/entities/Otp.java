@@ -22,5 +22,5 @@ public class Otp {
 
     @OneToOne
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
-    private Client agent;
+    private Client client;
 }

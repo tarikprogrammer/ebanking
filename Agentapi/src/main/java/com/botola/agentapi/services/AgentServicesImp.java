@@ -11,6 +11,8 @@ import jakarta.mail.MessagingException;
 import jakarta.mail.internet.MimeMessage;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
+import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
@@ -31,6 +33,7 @@ public class AgentServicesImp implements AgentService{
     private final JavaMailSender mailSender;
     private final OtpRepository otpRepository;
     private final ObjectValidator<AgentDto> objectValidator;
+   private final ModelMapper modelMapper;
 
     @Override
     public AgentDto login(String email, String password) {
@@ -90,12 +93,12 @@ public class AgentServicesImp implements AgentService{
     }
 
     @Override
-    public boolean updatePassword(String newPassword, String email) {
+    public AgentDto updatePassword(String newPassword, String email) {
         Agent agent = agentRepository.findByEmail(email).orElseThrow(()->new EntityNotFoundException("ops !! agent not found "));
         agent.setPassword(newPassword);
-        agentRepository.save(agent);
+        Agent saved =agentRepository.save(agent);
+       return AgentDto.toDto(saved);
 
-        return true;
     }
 
     @Override

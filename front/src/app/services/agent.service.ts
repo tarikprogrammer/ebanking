@@ -22,4 +22,9 @@ export class AgentService {
     verifyOtp(otp:string,email:string){
        return this.http.post(this.URL_API+"/sendOtp",{email:email,otp:otp})
     }
+
+
+    updatePasswordforAgent(form:any){
+      return this.http.post(this.URL_API+"/updatePassword",form.value);
+    }
 }

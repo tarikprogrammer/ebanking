@@ -51,6 +51,7 @@ export class EnterEmailToResetPasswordComponent implements OnInit{
          },(error:any)=>{
            this.loginViolation =error;
            this.isLoader=false;
+           // check for this email for client
            console.log(this.loginViolation)
          }
        )

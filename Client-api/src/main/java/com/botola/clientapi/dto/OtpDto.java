@@ -9,13 +9,13 @@ import java.time.LocalDateTime;
 
 
 @Builder
-public record OtpDto(Long id, int otp, LocalDateTime expireDate, Client agent) {
+public record OtpDto(Long id, int otp, LocalDateTime expireDate, Client client) {
 
     public Otp toEntity(OtpDto otpDto){
         return Otp.builder()
                 .id(otpDto.id)
                 .otp(otpDto.otp)
-                .agent(agent)
+                .client(client)
                 .build();
     }
 }

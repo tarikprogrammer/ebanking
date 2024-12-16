@@ -34,7 +34,7 @@ public class AgentController {
     }
 
     @PostMapping("/updatePassword")
-    public ResponseEntity<Boolean>updatePassword(@RequestBody Map<String,String>json){
+    public ResponseEntity<AgentDto>updatePassword(@RequestBody Map<String,String>json){
         return ResponseEntity.ok(agentService.updatePassword(json.get("password"),json.get("email")));
     }
 

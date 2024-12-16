@@ -81,6 +81,7 @@ export class NavComponent {
     sessionStorage.removeItem("goToAgent");
     sessionStorage.removeItem("goToClient");
     location.reload()
+    this.rouuter.navigateByUrl("");
 
   }
 }

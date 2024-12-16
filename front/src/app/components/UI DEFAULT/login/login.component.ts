@@ -52,20 +52,22 @@ export class LoginComponent implements OnInit{
          // go to Agent
          sessionStorage.setItem("goToAgent",'true');
          sessionStorage.setItem("agent",JSON.stringify(response));
+         console.log(response)
          this.router.navigateByUrl("");
        }
-       if(this.goToClient){
-         // go to Client
-         sessionStorage.setItem("goToClient",'true');
-         sessionStorage.setItem("client",JSON.stringify(response));
-         this.router.navigateByUrl("");
-       }
+
 
       },(error:any)=>{
         this.loginErrors = error?.error?.errors || {}
         this.error = error
         if(this.error && this.agent.email && this.agent.password){
           this.goToAgent =false;
+          this.goToClient = true;
+          // method for login client
+          // storage
+         /* sessionStorage.setItem("goToClient",'true');
+          sessionStorage.setItem("client",JSON.stringify(response));
+          this.router.navigateByUrl("");*/
           console.log("check client ")
         }
       }

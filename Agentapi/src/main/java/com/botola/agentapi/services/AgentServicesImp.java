@@ -33,7 +33,6 @@ public class AgentServicesImp implements AgentService{
     private final JavaMailSender mailSender;
     private final OtpRepository otpRepository;
     private final ObjectValidator<AgentDto> objectValidator;
-   private final ModelMapper modelMapper;
 
     @Override
     public AgentDto login(String email, String password) {
@@ -107,12 +106,7 @@ public class AgentServicesImp implements AgentService{
         return agentRepository.findByEmail(email).isPresent() ? true :false;
     }
 
-    @Override
-    public void changeLanguage(String language,String email) {
-        Agent agent = agentRepository.findByEmail(email).orElseThrow(()->new EntityNotFoundException("agent not found "));
-        agent.setLanguage(language);
-        agentRepository.save(agent);
-    }
+
 
     private int generateOtp(){
         Random random = new Random();

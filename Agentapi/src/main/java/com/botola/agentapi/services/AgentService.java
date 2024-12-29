@@ -9,8 +9,4 @@ public interface AgentService {
     boolean verfiyOtp(int otp,String email);
     AgentDto updatePassword(String newPassword, String email);
     boolean verifyEmail(String email);
-    void changeLanguage(String language,String email);
-
-    // consult profile agent
-    //
 }

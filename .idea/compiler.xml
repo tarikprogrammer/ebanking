@@ -18,15 +18,15 @@
         </processorPath>
         <module name="api-cmi" />
       </profile>
-      <profile name="Annotation profile for Agentapi" enabled="true">
+      <profile name="Annotation profile for Client-api" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="false">
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.30/lombok-1.18.30.jar" />
         </processorPath>
-        <module name="Agentapi" />
         <module name="Client-api" />
+        <module name="Agentapi" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

@@ -2,6 +2,7 @@ package com.botola.clientapi.service;
 
 
 import com.botola.clientapi.dto.ClientDto;
+import com.botola.clientapi.entities.Account;
 import com.botola.clientapi.entities.Client;
 import com.botola.clientapi.entities.Otp;
 import com.botola.clientapi.openfeigns.AgentVerifyEmail;
@@ -11,18 +12,21 @@ import jakarta.mail.MessagingException;
 import jakarta.mail.internet.MimeMessage;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.LocalDateTime;
-import java.util.Random;
-import java.util.UUID;
+import java.util.*;
 
 @Service
 @RequiredArgsConstructor
@@ -34,18 +38,58 @@ public class ClientServiceImpl implements ClientService {
 
 
     @Override
-    public ClientDto createClientByAgent(ClientDto client, MultipartFile file) {
-       // client  database
-        // agent  database
+    public boolean createClientByAgent(ClientDto client, MultipartFile file) {
         boolean emailExist = agentVerifyEmail.verifyEmail(client.email());
+        if(!emailExist) {
 
-        // email : belaid.tarikk@gmail.com
+            boolean searchClient = clientRepository.findByEmail(client.email()).isPresent();
+            if(!searchClient) {
+                System.out.println("I am Here");
+                String generatePassword = generatePassword();
+                Client client1 = ClientDto.toEntity(client);
+                client1.setImageIdentity(file.getOriginalFilename().getBytes(StandardCharsets.UTF_8));
+                client1.setPassword(generatePassword);
+                Client savedClient = clientRepository.save(client1);
 
-        return null;
+                // send Email to client
+
+                Path path = Paths.get("/Users/tarik/Desktop/ebanking/Client-api/src/main/resources/templates/sendPassword.html");
+                try {
+                    String htmlContent = new String(Files.readAllBytes(path));
+                    Map<String,String> maps = new HashMap<>();
+                    maps.put("clientName",savedClient.getLname());
+                    maps.put("usernameClient",savedClient.getEmail());
+                    maps.put("PasswordClient",generatePassword);
+                    String updatedHtmlContent = htmlContent;
+                    for (Map.Entry<String, String> entry : maps.entrySet()) {
+                        String placeholder = "{{" + entry.getKey() + "}}";
+                        updatedHtmlContent = updatedHtmlContent.replace(placeholder, entry.getValue());
+                    }
+
+
+                    MimeMessage message = mailSender.createMimeMessage();
+                    MimeMessageHelper helper = new MimeMessageHelper(message, true);
+                    helper.setTo(savedClient.getEmail());
+                    helper.setFrom("flowpayonline@gmail.com");
+                    helper.setSubject("Congratulations , Your account has been created");
+                    helper.setText(updatedHtmlContent, true);
+                    mailSender.send(message);
+
+                }catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+                return true;
+            }
+        }
+        return false;
     }
 
     @Override
-    public void deleteClient(String email) {
+    public boolean deleteClientByAgent(String email) {
+        Client clientSearch = clientRepository.findByEmail(email).orElseThrow(EntityNotFoundException::new);
+        clientRepository.delete(clientSearch);
+        return verifyEmail(email);
 
     }
 
@@ -109,10 +153,19 @@ public class ClientServiceImpl implements ClientService {
 
     @Override
     public boolean verifyEmail(String email) {
-        return clientRepository.findByEmail(email).isPresent() ? true :false;
+        return clientRepository.findByEmail(email).isPresent();
     }
 
-  // generate a unique password
+    @Override
+    public Page<Client> findAllClients(Pageable pageable,int page) {
+        Page<Client> clients = clientRepository.findAll(PageRequest.of(page,4));
+        clients.getContent().forEach(client -> {
+            Account account = client.getAccount();
+        });
+        return clients;
+    }
+
+    // generate a unique password
     private String generatePassword() {
         return "FlowPay2024" ;
     }

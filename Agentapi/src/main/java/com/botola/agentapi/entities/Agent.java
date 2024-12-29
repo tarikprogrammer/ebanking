@@ -19,7 +19,6 @@ public class Agent {
     private String email;
     private String password;
     private String phone;
-    private String language;
 
     @OneToOne(mappedBy = "agent")
     private Otp otp;

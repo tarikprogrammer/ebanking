@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Congratulations for opening account bank at FlowPay</title>
+</head>
+<body>
+<section style="max-width: 42rem; padding: 2rem 1.5rem; margin: 0 auto; background-color: #ffffff; color: #111827; font-family: Arial, sans-serif;">
+    <header style="text-align: center; margin-bottom: 2rem;">
+        <div  style="display: flex;align-items: center;gap: 7px;text-decoration: none">
+            <img style="height: 3rem; width: auto;" src="https://space.bouncewatch.com/images/297576/flowpay-logo.jpg" alt="Meraki UI Logo">
+            <span style="margin-left:10px;color: #5bc0ed;font-weight: bold;font-size: 30px;font-family: sans-serif">FlowPay</span>
+        </div>
+    </header>
+
+    <main>
+        <h2 style="color: #374151; font-size: 1.5rem; margin-bottom: 1rem;">
+            Hi {{clientName}},
+        </h2>
+
+        <p style="line-height: 1.6; color: #4b5563; margin-bottom: 2rem;">
+            Thank you for opening your bank account at <span style="font-size: 16px; font-weight: bold; color: #5bc0ed;text-decoration: underline">FlowPay Bank</span>. We’re excited to have you on board!  You can find your account information below::
+        </p>
+
+        <div >
+            <p style="display: flex;align-items: center;gap: 5px;color: #4b5563">
+                <span style="text-decoration: underline;">username</span> : <span>{{username}}</span>
+            </p>
+            <p style="display: flex;align-items: center;gap: 5px;color: #4b5563">
+                <span style="text-decoration: underline;">Account Type</span> : <span>{{accountType}}</span>
+            </p>
+            <p style="display: flex;align-items: center;gap: 5px;margin-top: 5px;color: #4b5563">
+                <span style="text-decoration: underline;">RIB</span> : <span>{{rib}}</span>
+            </p>
+        </div>
+
+        <p style="line-height: 1.6; color: #4b5563; margin-bottom: 2rem;">
+            If you have any questions, feel free to reach out to us. We're here to help and support you every step of the way.
+        </p>
+
+        <p style="line-height: 1.6; color: #4b5563;">
+            Thanks, <br>
+            FlowPay team
+        </p>
+    </main>
+
+    <footer style="margin-top: 2rem; font-size: 0.875rem; color: #6b7280; line-height: 1.6;">
+        <p>
+            This email was sent to
+            <a href="mailto:contact@FlowPay.com" style="color: #2563eb; text-decoration: underline;">contact&#64;flowpayonline.com</a>.
+            If you'd rather not receive this kind of email, you can
+            <a href="#" style="color: #2563eb; text-decoration: underline;">unsubscribe</a> or
+            <a href="#" style="color: #2563eb; text-decoration: underline;">manage your email preferences</a>.
+        </p>
+        <p style="margin-top: 1rem;">
+            ©  FlowPay UI. All Rights Reserved.
+        </p>
+    </footer>
+</section>
+</body>
+</html>

@@ -9,14 +9,13 @@ import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import lombok.Builder;
 @Builder
-public record AgentDto(Long id, String name, @NotEmpty(message = "email is required") @NotBlank(message = "email is required") @NotNull(message = "email is required") @Email(message = "enter a valid email") String email, @NotEmpty(message = "password is required") @NotNull(message = "password is required") @NotBlank(message = "password is required") String password, String phone,String language){
+public record AgentDto(Long id, String name, @NotEmpty(message = "email is required") @NotBlank(message = "email is required") @NotNull(message = "email is required") @Email(message = "enter a valid email") String email, @NotEmpty(message = "password is required") @NotNull(message = "password is required") @NotBlank(message = "password is required") String password, String phone){
    public static Agent toEntity(AgentDto agentDto) {
        return Agent.builder()
                .name(agentDto.name)
                .email(agentDto.email)
                .password(agentDto.password)
                .phone(agentDto.phone)
-               .language(agentDto.language)
                .build();
    }
    public static AgentDto toDto(Agent agent) {
@@ -25,7 +24,6 @@ public record AgentDto(Long id, String name, @NotEmpty(message = "email is requi
                .name(agent.getName())
                .email(agent.getEmail())
                .phone(agent.getPhone())
-               .language(agent.getLanguage())
                .build();
    }
 }

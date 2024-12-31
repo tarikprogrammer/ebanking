@@ -49,6 +49,7 @@ public class ClientServiceImpl implements ClientService {
                 Client client1 = ClientDto.toEntity(client);
                 client1.setImageIdentity(file.getOriginalFilename().getBytes(StandardCharsets.UTF_8));
                 client1.setPassword(generatePassword);
+                client1.setLocked(false);
                 Client savedClient = clientRepository.save(client1);
 
                 // send Email to client
@@ -163,6 +164,18 @@ public class ClientServiceImpl implements ClientService {
             Account account = client.getAccount();
         });
         return clients;
+    }
+
+    @Override
+    public Client changeVisibility(String email) {
+        Client client = clientRepository.findByEmail(email).orElseThrow(()->new EntityNotFoundException("ops !! client not found "));
+        client.setLocked(!client.isLocked());
+        return clientRepository.save(client);
+    }
+
+    @Override
+    public Client login(String email, String password) {
+        return clientRepository.findByEmailAndPassword(email, password).orElseThrow(()->new EntityNotFoundException("email or password incorrect"));
     }
 
     // generate a unique password

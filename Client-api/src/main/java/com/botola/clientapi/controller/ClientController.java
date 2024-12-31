@@ -2,20 +2,23 @@ package com.botola.clientapi.controller;
 
 
 import com.botola.clientapi.dto.ClientDto;
-import com.botola.clientapi.entities.Client;
+import com.botola.clientapi.entities.TemporaryCard;
 import com.botola.clientapi.openfeigns.AgentVerifyEmail;
+
 import com.botola.clientapi.service.AccountService;
 import com.botola.clientapi.service.ClientService;
+import com.botola.clientapi.service.TemporaryCardService;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import lombok.AllArgsConstructor;
+
 import lombok.RequiredArgsConstructor;
-import org.hibernate.internal.build.AllowNonPortable;
 import org.springframework.data.domain.Pageable;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+
+import java.util.Map;
 
 @RestController
 @RequestMapping("/client-api")
@@ -26,6 +29,7 @@ public class ClientController {
     private final  ClientService clientService;
     private final  AgentVerifyEmail agentVerifyEmail;
     private final AccountService accountService;
+    private final TemporaryCardService temporaryCardService;
 
     @GetMapping("/client/{emaiL}")
     public ResponseEntity<Boolean> getClient(@PathVariable String emaiL) {
@@ -69,6 +73,24 @@ public class ClientController {
     @GetMapping("/client/clients/{page}")
     public ResponseEntity<?> getClients(@PathVariable int page, Pageable pageable) {
         return ResponseEntity.ok(clientService.findAllClients(pageable,page));
+    }
+
+
+    @GetMapping("/client/locked/{email}")
+    public ResponseEntity<?> lockClient(@PathVariable String email) {
+        return ResponseEntity.ok(clientService.changeVisibility(email));
+    }
+
+
+    @PostMapping("/client/temoraryCard/{email}")
+    public ResponseEntity<?> temoraryCard(@PathVariable String email,@RequestBody TemporaryCard temporaryCard ) {
+        return ResponseEntity.ok(temporaryCardService.addTemporaryCard(temporaryCard,email));
+    }
+
+
+    @PostMapping("/client/login")
+    public ResponseEntity<?> login(@RequestBody Map<String,String> login) {
+        return ResponseEntity.ok(clientService.login(login.get("email"),login.get("password")));
     }
 
 

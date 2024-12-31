@@ -21,6 +21,7 @@ public class TemporaryCard {
     private String cardNumber;
     private Date expiredAt;
     private String cvv;
+    private double amount;
 
     @OneToOne
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)

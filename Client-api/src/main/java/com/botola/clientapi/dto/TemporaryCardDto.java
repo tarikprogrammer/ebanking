@@ -5,7 +5,7 @@ import lombok.Builder;
 
 import java.util.Date;
 @Builder
-public record TemporaryCardDto(Long id, String cardNumber, Date expiredAt,String cvv) {
+public record TemporaryCardDto(Long id, String cardNumber, Date expiredAt,String cvv,double amount) {
 
     public static TemporaryCardDto temporaryCardDto(TemporaryCard temporaryCard) {
         return TemporaryCardDto.builder()
@@ -13,6 +13,7 @@ public record TemporaryCardDto(Long id, String cardNumber, Date expiredAt,String
                 .cardNumber(temporaryCard.getCardNumber())
                 .expiredAt(temporaryCard.getExpiredAt())
                 .cvv(temporaryCard.getCvv())
+                .amount(temporaryCard.getAmount())
                 .build();
     }
 
@@ -22,6 +23,7 @@ public record TemporaryCardDto(Long id, String cardNumber, Date expiredAt,String
                 .cardNumber(temporaryCardDto.cardNumber())
                 .expiredAt(temporaryCardDto.expiredAt())
                 .cvv(temporaryCardDto.cvv())
+                .amount(temporaryCardDto.amount())
                 .build();
     }
 }

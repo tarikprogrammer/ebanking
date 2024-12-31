@@ -15,4 +15,6 @@ public interface ClientService {
     boolean updatePassword(String newPassword, String email);
     boolean verifyEmail(String email);
     Page<Client> findAllClients(Pageable pageable,int page);
+    Client changeVisibility(String email);
+    Client login(String email, String password);
 }

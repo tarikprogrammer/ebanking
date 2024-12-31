@@ -12,6 +12,8 @@ import {AddNewClientComponent} from "../../components/UI AGENT/add-new-client/ad
 import {SouscriptionsComponent} from "../../components/UI AGENT/souscriptions/souscriptions.component";
 import {ConsultAccountComponent} from "../../components/UI AGENT/consult-account/consult-account.component";
 import {DefaultUiAgentUiService} from "../../services/default-ui-agent-ui.service";
+import {LearnMoreForWlcComponent} from "../../components/UI DEFAULT/learn-more-for-wlc/learn-more-for-wlc.component";
+import {TransactionsSecComponent} from "../../components/UI DEFAULT/transactions-sec/transactions-sec.component";
 
 @Component({
   selector: 'app-home',
@@ -26,7 +28,9 @@ import {DefaultUiAgentUiService} from "../../services/default-ui-agent-ui.servic
     FooterComponent,
     AddNewClientComponent,
     SouscriptionsComponent,
-    ConsultAccountComponent
+    ConsultAccountComponent,
+    LearnMoreForWlcComponent,
+    TransactionsSecComponent
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
@@ -34,4 +38,6 @@ import {DefaultUiAgentUiService} from "../../services/default-ui-agent-ui.servic
 export class HomeComponent {
   constructor(public comm:DefaultUiAgentUiService) {
   }
+
+    protected readonly Date = Date;
 }

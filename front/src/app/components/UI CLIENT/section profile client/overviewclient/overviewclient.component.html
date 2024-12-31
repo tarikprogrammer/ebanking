@@ -1,0 +1,34 @@
+<div class="grid grid-cols-2 justify-items-center bg-gray-100 bg-opacity-[0.8] py-8 px-10 rounded-2xl">
+  <div class="flex flex-col gap-8  ">
+    <div>
+      <h1 class="font-medium text-xl mb-2 text-info">{{'profileAgent.fullName' | translate}} :</h1>
+      <p>{{this.clientData.fname + ' '+this.clientData.lname}}</p>
+    </div>
+    <div>
+      <h1 class="font-medium text-xl mb-2 text-info">Email :</h1>
+      <p>{{this.clientData.email}}</p>
+    </div>
+    <div>
+      <h1 class="font-medium text-xl mb-2 text-info">{{'profileAgent.accountType' | translate}} :</h1>
+      @if(this.clientData.account){
+        <p>{{this.clientData.account.accountName}}</p>
+      }@else{
+        <p>undefined</p>
+      }
+    </div>
+  </div>
+  <div class="flex flex-col gap-8 ">
+    <div>
+      <h1 class="font-medium text-xl mb-2 text-info">{{'profileAgent.role' | translate}} :</h1>
+      <p>client chez FlowPay</p>
+    </div>
+    <div>
+      <h1 class="font-medium text-xl mb-2 text-info">{{'profileAgent.address' | translate}} :</h1>
+      <p>undefined</p>
+    </div>
+    <div>
+      <h1 class="font-medium text-xl mb-2 text-info">{{'profileAgent.phone' | translate}} :</h1>
+      <p>{{'+'+this.clientData?.phone}}</p>
+    </div>
+  </div>
+</div>

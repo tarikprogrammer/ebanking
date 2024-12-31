@@ -1,0 +1,32 @@
+<div class="w-[80%] mx-auto mt-5">
+  <h1 class="text-center font-medium text-[#232323] text-4xl w-[50%] mx-auto leading-[60px]">{{'profileAgent.title' | translate}}</h1>
+  <div class="flex w-full h-[500px]  overflow-hidden border border-gray-300 rounded-xl  mt-20">
+    <div class="w-[35%] border-r px-5 py-10  grid grid-cols-1 justify-items-center">
+     <ul class="flex flex-col items-center gap-2 w-full ">
+       <li  class="w-[60px] avatar online">
+         <img   src="https://t4.ftcdn.net/jpg/05/49/98/39/360_F_549983970_bRCkYfk0P6PP5fKbMhZMIb07mCJ6esXL.jpg" />
+       </li>
+       <li>
+         <h1 class="font-medium text-gray-500 mt-2">Tarik Belaid</h1>
+       </li>
+       <li>
+         <span class="badge badge-info text-white">Agent</span>
+       </li>
+       <ul class="mt-10 flex flex-col gap-8 w-full ">
+         <li routerLink="overviewClient" routerLinkActive="bg-[#eaf0f8]" [routerLinkActiveOptions]="{exact: true}" class="flex items-center justify-between  cursor-pointer  rounded-xl py-3 px-5 "><span class="flex items-center gap-2 "><i class='bx bx-home-alt-2'></i><span>{{'profileAgent.overview' | translate}}</span></span><i class='bx bxs-chevron-right' ></i></li>
+         <li routerLink="changePasswordClient" routerLinkActive="bg-[#eaf0f8]" class="flex items-center justify-between  cursor-pointer  rounded-xl py-3 px-5 "><span class="flex items-center gap-2 "><i class='bx bx-lock-alt' ></i><span>{{'profileAgent.changePassword' | translate}}</span></span><i class='bx bxs-chevron-right' ></i></li>
+         <li routerLink="reportAgent" routerLinkActive="bg-[#eaf0f8]" class="flex items-center justify-between cursor-pointer   rounded-xl py-3 px-5 "><span class="flex items-center gap-2 "><i class='bx bxs-report' ></i><span>{{'profileAgent.claim' | translate}}</span></span><i class='bx bxs-chevron-right' ></i></li>
+       </ul>
+     </ul>
+    </div>
+    <div class="w-[100%] bg-gray-50">
+      <div class="p-10">
+        <h1 class="text-2xl font-medium"> Welcome Back <span class="font-bold text-primary">Agent </span>!!</h1>
+        <div class="mt-20">
+          <router-outlet></router-outlet>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

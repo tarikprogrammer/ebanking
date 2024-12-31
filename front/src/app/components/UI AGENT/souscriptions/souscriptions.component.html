@@ -1,15 +1,15 @@
-<div class="w-[80%] mx-auto">
-  <div class="w-full">
+<div class="w-[80%] mx-auto mt-20">
+  <div class="w-full" [formGroup]="client" >
     <h2 class="text-xl font-semibold text-gray-900">{{'agent.souscriptions.title' | translate}}</h2>
     <div class="mt-10">
       <div class="sm:col-span-3">
         <label for="product" class="block text-sm/6 font-medium text-gray-900">{{'agent.souscriptions.product' | translate}}</label>
         <div class="mt-2">
-          <select id="product" class="block w-full rounded-md bg-white px-3 py-2 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
-            <option>{{'agent.souscriptions.account.account1' | translate}}</option>
-            <option>{{'agent.souscriptions.account.account2' | translate}}</option>
-            <option>{{'agent.souscriptions.account.account3' | translate}}</option>
-            <option>{{'agent.souscriptions.account.account4' | translate}}</option>
+          <select formControlName="accountType" id="product" class="block w-full rounded-md bg-white px-3 py-2 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
+            <option value="Hssab1" [selected]="true">{{'agent.souscriptions.account.account1' | translate}}</option>
+            <option value="Hssab2">{{'agent.souscriptions.account.account2' | translate}}</option>
+            <option value="Hssab3">{{'agent.souscriptions.account.account3' | translate}}</option>
+            <option value="Hssab4">{{'agent.souscriptions.account.account4' | translate}}</option>
           </select>
         </div>
       </div>
@@ -21,31 +21,31 @@
           <div class="sm:col-span-3">
             <label for="first-name" class="block text-sm/6 font-medium text-gray-900">{{'agent.addClient.firstname' | translate}}</label>
             <div class="mt-2">
-              <input type="text" name="first-name" id="first-name" autocomplete="given-name" class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
+              <input formControlName ="fname" type="text" name="first-name" id="first-name" autocomplete="given-name" class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
             </div>
           </div>
 
           <div class="sm:col-span-3">
             <label for="last-name" class="block text-sm/6 font-medium text-gray-900">{{'agent.addClient.lastname' | translate}}</label>
             <div class="mt-2">
-              <input type="text" name="last-name" id="last-name" autocomplete="family-name" class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
+              <input formControlName="lname" type="text" name="last-name" id="last-name" autocomplete="family-name" class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
             </div>
           </div>
           <div class="sm:col-span-3">
             <label for="email" class="block text-sm/6 font-medium text-gray-900">{{'agent.addClient.email' | translate}}</label>
             <div class="mt-2">
-              <input id="email"  name="email" type="email" autocomplete="email" class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
+              <input formControlName="email" id="email"  name="email" type="email" autocomplete="email" class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
             </div>
           </div>
           <div class="sm:col-span-3">
             <label for="phone" class="block text-sm/6 font-medium text-gray-900">{{'agent.addClient.phone' | translate}}</label>
             <div class="mt-2">
-              <input id="phone"  type="text"  class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
+              <input formControlName="phone" id="phone"  type="text"  class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
             </div>
           </div>
         </div>
         <div class="flex items-center justify-end mt-6">
-          <button class="btn btn-accent" >{{'agent.souscriptions.openAccount' | translate}}</button>
+          <button (click)="openAccount()" class="btn btn-primary" >{{'agent.souscriptions.openAccount' | translate}}</button>
         </div>
       </div>
     </div>

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {TranslateModule, TranslatePipe, TranslateService} from "@ngx-translate/core";
 import {Router, RouterLink} from "@angular/router";
 import {DefaultUiAgentUiService} from "../../../services/default-ui-agent-ui.service";
@@ -14,27 +14,45 @@ import {DefaultUiAgentUiService} from "../../../services/default-ui-agent-ui.ser
   templateUrl: './nav.component.html',
   styleUrl: './nav.component.css'
 })
-export class NavComponent {
+export class NavComponent  implements OnInit{
   isSelected:boolean = false;
-  langStr:string='en';
   frg:String="";
   client = sessionStorage.getItem('client');
   agent = sessionStorage.getItem('agent');
   goToAgent = sessionStorage.getItem('goToAgent')
-  goToClient = sessionStorage.getItem('goToClient')
+  goToClient = sessionStorage.getItem('goToClient');
+  currentLang  = localStorage.getItem('lang');
   isShowProfile:boolean =false;
-  lang:string="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Flag_of_the_United_Kingdom_%283-5%29.svg/2560px-Flag_of_the_United_Kingdom_%283-5%29.svg.png";
+  lang?:string
   constructor(private translate:TranslateService,private rouuter:Router,private conn:DefaultUiAgentUiService) {
-    this.translate.use('en');
+    if (this.currentLang == 'fr'){
+      this.lang="https://img.freepik.com/vecteurs-libre/illustration-du-drapeau-france_53876-27099.jpg?semt=ais_hybrid";
+      this.translate.use('fr');
+    }
+    if (this.currentLang == 'en'){
+      this.lang="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Flag_of_the_United_Kingdom_%283-5%29.svg/2560px-Flag_of_the_United_Kingdom_%283-5%29.svg.png";
+      this.translate.use('en');
+    }
+
+    console.log('constructor ')
+
   }
+
+  ngOnInit() {
+    console.log('init')
+  }
+
 
   selectfR(value:string) {
     if(value == 'fr'){
       this.lang ="https://img.freepik.com/vecteurs-libre/illustration-du-drapeau-france_53876-27099.jpg?semt=ais_hybrid";
       this.translate.use('fr')
-    }else{
+      localStorage.setItem('lang','fr')
+    }
+    if(value == 'en'){
       this.lang="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Flag_of_the_United_Kingdom_%283-5%29.svg/2560px-Flag_of_the_United_Kingdom_%283-5%29.svg.png";
-      this.translate.use('en')
+      this.translate.use('en');
+      localStorage.setItem('lang','en')
     }
     this.isSelected=false;
   }

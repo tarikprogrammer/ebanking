@@ -1,3 +1,6 @@
 .gradient{
   background-image: linear-gradient(to right bottom, #fafafe, rgba(218, 237, 255, 0.37));
 }
+.blur-custom {
+  filter: blur(70px);
+}

@@ -1,0 +1,215 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About us",
+    "service": "Services",
+    "contact": "Contact us",
+    "login": "Sign in"
+  },
+  "header": {
+    "title": "Welcome to Our E-Banking Platform",
+    "subTitle": "Experience seamless and secure online banking services at your fingertips. Manage your finances conveniently from anywhere, anytime.",
+    "login": "Sign in",
+
+    "Hssab1": {
+      "subTitle": "Our offer allows you to make secure payments and transactions with a limit of 200 DH. Perfect for small daily expenses, our solution ensures simplicity and speed. Enjoy a reliable service tailored to your needs. Sign up now to discover all the benefits!"
+    },
+    "Hssab2": {
+      "subTitle": "Our offer allows you to make secure payments and transactions up to a limit of 10,000 DH. Ideal for significant operations, it combines reliability and efficiency. Manage your finances with peace of mind using our optimized service. Join us today to take advantage of this solution!"
+    },
+    "Hssab3": {
+      "subTitle": "Our offer allows you to make secure payments and transactions up to a limit of 15,000 DH. Designed for large operations, it guarantees performance and security. Simplify your transactions while enjoying a premium service. Sign up now to take full advantage!"
+    },
+    "Hssab4": {
+      "subTitle": "Our offer allows you to make secure payments and transactions up to a limit of 20,000 DH. Perfect for large-scale transactions, it combines speed and security. Manage your operations with confidence using our reliable solution. Join us today to discover its advantages!"
+    }
+
+  },
+  "features": {
+    "part1": {
+      "title": "Why Open an Online Bank Account with FlowPay?"
+
+    },
+    "part2": {
+      "title1": "Open your account and activate your digital wallet now.",
+      "subTitle1": "Enjoy simple and secure financial management with borderless payments and innovative services at your fingertips.",
+      "title2": "Account opening and money management 100% online.",
+      "subTitle2": "It's better when it's simple!",
+      "title3": "It's better when it's simple!",
+      "subTitle3": "Free instant transfers, virtual cards for secure shopping, and more."
+    },
+    "partenaire": {
+      "title": "Pay your bill online without leaving home and in a secure manner",
+      "subTitle": "Quick, easy, and safe payments from the comfort of your home."
+    }
+  },
+  "agentfeatures": {
+    "title": "How to open an online bank account with FlowPay?",
+    "title1": "Need help opening an account?",
+    "subTitle1": "Contact an agent now and quickly access the FlowPay app to manage your finances with ease.",
+    "title2": "Need help opening a bank account?",
+    "subTitle2": "Contact an agent now and open your bank account with us quickly and easily.",
+    "title3": "Immediate account activation.",
+    "subTitle3": "Agents have opened your bank account space. You can now start making purchases and transactions securely and easily.",
+    "button": "Contact our agents",
+    "title4": "A welcoming, available, and responsive Customer Service",
+    "subTitle4": "A 100% Morocco-based customer service, reachable from Monday to Saturday by phone, email, and chat.",
+    "link": "Contact us"
+  },
+  "loginForm": {
+    "title": "Sign in to your account",
+    "field1": "Email Address",
+    "field2": "Password",
+    "login": "Sign in",
+    "forgotPassword": "forgot your password ?"
+  },
+  "enterYourEmailToResetPassword": {
+    "title": "Enter your Email to Reset Password",
+    "email": "Email address",
+    "login": "Submit"
+  },
+  "enterNewPassword": {
+    "title": "Enter New Password",
+    "newPassword": "New Password",
+    "confirmPassword": "Confirm Password",
+    "login": "Submit"
+  },
+  "agent": {
+    "account": "Add New Client",
+    "addClient": {
+      "firstname": "First name",
+      "lastname": "Last name",
+      "email": "Email address",
+      "confirmEmail": "Confirm Email address",
+      "title": "Personal Information",
+      "button": "Next",
+      "identityDocument": "Identity document",
+      "phone": "Phone number",
+      "numberIdentityDocument": "N Identity document",
+      "dateNaissance": "Date of birth",
+      "address": "Address",
+      "CommercialRegisterRegistrationNumber": "Commercial register registration number (optional)",
+      "TaxIdentificationNumber": "Tax identification number (optional)",
+      "createClient": "Create",
+      "back": "Back"
+
+    },
+    "souscriptions": {
+      "title": "Opening a payment account",
+      "subTitle": "Personal Informations",
+      "firstname": "First name",
+      "lastname": "Last name",
+      "email": "Email address",
+      "phone": "Phone number",
+      "product": "Select a product",
+      "account": {
+        "account1": "Hssab 1 - Limit : 200 MAD",
+        "account2": "Hssab 2 - Limit : 10 000 MAD",
+        "account3": "Hssab 3 - Limit : 15 000 MAD",
+        "account4": "Hssab 4 - Limit : 20 000 MAD"
+      },
+      "informationClient" :"Client Information",
+      "openAccount":"Open an account"
+    },
+    "consultAccount": {
+      "title": "Consultation of client accounts and management of virtual cards",
+      "search": "Search by Email-Address or Phone nunber",
+      "action1": "Review",
+      "action2": "Edit"
+    }
+  },
+  "LearMore": {
+    "title": "Find all the answers to your questions.",
+    "wl": {
+      "section1": {
+        "title": "What is FlowPay ?",
+        "desc": "FlowPay is an e-banking application that allows you to manage your personal finances, make payments, and securely view your transactions."
+      },
+      "section2": {
+        "title": "Who can use FlowPay?",
+        "desc": "Anyone with a bank account at partner banks."
+      },
+      "section3": {
+        "title": "Is FlowPay available in multiple languages?",
+        "desc": "Yes, FlowPay supports multiple languages, including French, English."
+      },
+      "section4": {
+        "title": "Is FlowPay secure ?",
+        "desc": "Absolutely. FlowPay uses advanced encryption protocols (SSL/TLS) and two-factor authentication (2FA) to ensure your data is safe."
+      },
+      "section5": {
+        "title": "How do I create an account on FlowPay?",
+        "desc": "Check our Platform, register with your email address, and link your bank accounts by following the guided steps."
+      }
+    }
+  },
+  "user": {
+    "profile": {
+      "profile": "My Profile",
+      "openAccount": "Open Account",
+      "manageAccount": "Manage Account",
+      "help": "Help",
+      "logout": "Sign out"
+    }
+  },
+  "contact": {
+    "title": "Contact us !",
+    "acceuil": "Home",
+    "contact": "Contact",
+    "email": {
+      "titile": "E-mail",
+      "text": "Write to us with your inquiries or questions, and our advisors will respond via email."
+    },
+    "phone": {
+      "titile": "Phone",
+      "text": "Our advisors are available to answer all your questions."
+    },
+    "button": "Choose"
+  },
+  "consultAccount": {
+    "fullName": "Full Name",
+    "email": "Email",
+    "phone": "Phone",
+    "AccountType": "Account Type",
+    "Cardbank": "Card Bank",
+    "tempororyCard": "Temporary Card",
+    "actions": "Actions",
+    "edit": "Edit",
+    "close": "close",
+    "Activated": "Activated",
+    "NotActivated": "Not Activated",
+    "title": "Manage Client",
+    "search": "search by email"
+
+  },
+  "cardTemp": {
+    "title": "Add a new temporary card for payments,transactions ... ",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "amount": "Amount",
+    "expireAt": "Expire At",
+    "button": "Add card"
+  },
+  "profileAgent": {
+    "title": "Manage Profile",
+    "overview": "Overview",
+    "changePassword": "Change Password",
+    "claim": "Claim",
+    "fullName": "Full Name",
+    "address": "Address",
+    "role": "Agent",
+    "phone": "Phone",
+    "accountType": "Account Type",
+    "newPass": "New Password",
+    "confirmPass": "Confirm Password",
+    "claimMessage": "Enter your complaint here ",
+    "sendToadmin": "Send to admin"
+  },
+  "event": {
+    "loading": "In progress ...",
+    "emailExist": "Email exist, try to change it to pass a next step !",
+    "undefined": " undefined"
+  }
+
+
+}

@@ -1,113 +1,204 @@
-<div class="navbar bg-white w-[90%] mx-auto shadow-md rounded-2xl ">
-  <div class="flex-1">
-    <a (click)="setHome()" routerLink="" class="text-[22px] font-bold ml-8 cursor-pointer">Flow<span class="text-accent">Pay</span></a>
-  </div>
-  <div class="flex  items-center  justify-between mr-8">
-    <div class="flex items-center gap-10">
-      <a (click)="goTo('header')" class="cursor-pointer hover:text-accent duration-500">{{'nav.home' | translate}}</a>
-      <a (click)="goTo('feature')" class="cursor-pointer hover:text-accent duration-500">{{'nav.about' | translate}}</a>
-      <a (click)="goTo('featureList')" class="cursor-pointer hover:text-accent  duration-500">{{'nav.service' | translate}}</a>
-      <a (click)="goTo('contact')" class="cursor-pointer hover:text-accent duration-500">{{'nav.contact' | translate}}</a>
-    </div>
-    <div class="flex   items-center ml-44  gap-8 relative">
-      <button (click)="select()" class="flex items-center gap-1">
-        <img class="w-[30px] h-[30px] rounded-full" [src]="lang" >
-        <i class='bx bxs-chevron-down'></i>
-      </button>
-      @if(isSelected){
-        <ul class="flex flex-col gap-3 absolute top-[60px] left-[-9px] bg-white shadow-lg rounded  p-[15px]">
-          <li (click)="selectfR('fr')" class="cursor-pointer">
-            <img class="w-[30px] h-[30px] rounded-full" src="https://img.freepik.com/vecteurs-libre/illustration-du-drapeau-france_53876-27099.jpg?semt=ais_hybrid">
-          </li>
-          <li (click)="selectfR('en')" class="cursor-pointer">
-            <img class="w-[30px] h-[30px] rounded-full" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Flag_of_the_United_Kingdom_%283-5%29.svg/2560px-Flag_of_the_United_Kingdom_%283-5%29.svg.png">
-          </li>
-        </ul>
-      }
-      @if (this.goToAgent){
-        <div class="avatar online relative">
-          <div  class="w-[40px] rounded-full cursor-pointer">
-            <img  (click)="showProfile()" src="https://t4.ftcdn.net/jpg/05/49/98/39/360_F_549983970_bRCkYfk0P6PP5fKbMhZMIb07mCJ6esXL.jpg" />
-          </div>
-          @if (isShowProfile){
-            <ul
-              class="absolute top-[150%] left-[50%] translate-x-[-50%] z-10 min-w-[190px] overflow-auto rounded-lg border border-slate-200 bg-white p-1.5 shadow-lg  focus:outline-none"
-            >
-              <li
-                role="menuitem"
-                class="cursor-pointer text-slate-800 flex w-full text-sm items-center rounded-md p-3 transition-all hover:bg-slate-100 focus:bg-slate-100 active:bg-slate-100"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 text-slate-400">
-                  <path fill-rule="evenodd" d="M18 10a8 8 0 1 1-16 0 8 8 0 0 1 16 0Zm-5.5-2.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0ZM10 12a5.99 5.99 0 0 0-4.793 2.39A6.483 6.483 0 0 0 10 16.5a6.483 6.483 0 0 0 4.793-2.11A5.99 5.99 0 0 0 10 12Z" clip-rule="evenodd" />
-                </svg>
 
-                <p class="text-slate-800 font-medium ml-2">
-                {{'user.profile.profile' | translate}}
-                </p>
-              </li>
-              <li (click)="goToOpenAccount()"
-                role="menuitem"
-                class="cursor-pointer text-slate-800 flex w-full text-sm items-center rounded-md p-3 transition-all hover:bg-slate-100 focus:bg-slate-100 active:bg-slate-100"
-              >
+<!--     version  2 -->
 
-                <svg  class="w-5 h-5 text-slate-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M11 2.5L20 7v2H2V7zm4 7.5h4v8h-4zM2 22v-3h18v3zm7-12h4v8H9zm-6 0h4v8H3zm0 10v1h16v-1zm1-9v6h2v-6zm6 0v6h2v-6zm6 0v6h2v-6zM3 8h16v-.4l-8-4.02L3 7.6z"/></svg>
-
-                <p class="text-slate-800 font-medium ml-2">
-                  {{'user.profile.openAccount' | translate}}
-                </p>
-              </li>
-              <li (click)="goToManageAccount()"
-                role="menuitem"
-                class="cursor-pointer text-slate-800 flex w-full text-sm items-center rounded-md p-3 transition-all hover:bg-slate-100 focus:bg-slate-100 active:bg-slate-100"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 text-slate-400">
-                  <path fill-rule="evenodd" d="M7.84 1.804A1 1 0 0 1 8.82 1h2.36a1 1 0 0 1 .98.804l.331 1.652a6.993 6.993 0 0 1 1.929 1.115l1.598-.54a1 1 0 0 1 1.186.447l1.18 2.044a1 1 0 0 1-.205 1.251l-1.267 1.113a7.047 7.047 0 0 1 0 2.228l1.267 1.113a1 1 0 0 1 .206 1.25l-1.18 2.045a1 1 0 0 1-1.187.447l-1.598-.54a6.993 6.993 0 0 1-1.929 1.115l-.33 1.652a1 1 0 0 1-.98.804H8.82a1 1 0 0 1-.98-.804l-.331-1.652a6.993 6.993 0 0 1-1.929-1.115l-1.598.54a1 1 0 0 1-1.186-.447l-1.18-2.044a1 1 0 0 1 .205-1.251l1.267-1.114a7.05 7.05 0 0 1 0-2.227L1.821 7.773a1 1 0 0 1-.206-1.25l1.18-2.045a1 1 0 0 1 1.187-.447l1.598.54A6.992 6.992 0 0 1 7.51 3.456l.33-1.652ZM10 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" clip-rule="evenodd" />
-                </svg>
-
-                <p class="text-slate-800 font-medium ml-2">
-                  {{'user.profile.manageAccount' | translate}}
-                </p>
-              </li>
-              <li routerLink="more"
-                role="menuitem"
-                class="cursor-pointer text-slate-800 flex w-full text-sm items-center rounded-md p-3 transition-all hover:bg-slate-100 focus:bg-slate-100 active:bg-slate-100"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 text-slate-400">
-                  <path fill-rule="evenodd" d="M18 10a8 8 0 1 1-16 0 8 8 0 0 1 16 0ZM8.94 6.94a.75.75 0 1 1-1.061-1.061 3 3 0 1 1 2.871 5.026v.345a.75.75 0 0 1-1.5 0v-.5c0-.72.57-1.172 1.081-1.287A1.5 1.5 0 1 0 8.94 6.94ZM10 15a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z" clip-rule="evenodd" />
-                </svg>
-
-                <p class="text-slate-800 font-medium ml-2">
-                  {{'user.profile.help' | translate}}
-                </p>
-              </li>
-              <hr class="my-2 border-slate-200" role="menuitem" />
-              <li (click)="logout()"
-                role="menuitem"
-                class="cursor-pointer text-slate-800 flex w-full text-sm items-center rounded-md p-3 transition-all hover:bg-slate-100 focus:bg-slate-100 active:bg-slate-100"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 text-slate-400">
-                  <path fill-rule="evenodd" d="M3 4.25A2.25 2.25 0 0 1 5.25 2h5.5A2.25 2.25 0 0 1 13 4.25v2a.75.75 0 0 1-1.5 0v-2a.75.75 0 0 0-.75-.75h-5.5a.75.75 0 0 0-.75.75v11.5c0 .414.336.75.75.75h5.5a.75.75 0 0 0 .75-.75v-2a.75.75 0 0 1 1.5 0v2A2.25 2.25 0 0 1 10.75 18h-5.5A2.25 2.25 0 0 1 3 15.75V4.25Z" clip-rule="evenodd" />
-                  <path fill-rule="evenodd" d="M19 10a.75.75 0 0 0-.75-.75H8.704l1.048-.943a.75.75 0 1 0-1.004-1.114l-2.5 2.25a.75.75 0 0 0 0 1.114l2.5 2.25a.75.75 0 1 0 1.004-1.114l-1.048-.943h9.546A.75.75 0 0 0 19 10Z" clip-rule="evenodd" />
-                </svg>
-
-                <p class="text-slate-800 font-medium ml-2">
-                  {{'user.profile.logout' | translate}}
-                </p>
-              </li>
-            </ul>
-          }
+<div class="bg-white">
+  <nav class="w-[90%] mx-auto flex items-center pt-5 pb-4 bg-white">
+    <!--     logo     -->
+    <div class="flex items-center justify-between w-full relative">
+      <a  class="flex items-center gap-3" (click)="setHome()" routerLink="">
+        <img class="w-[40px]" src="https://www.flowpay.it/assets/icon-512x512.png.webp">
+        <div>
+          <h1 class="text-xl font-semibold ">Flow<span class="text-[#42bcec]">Pay</span></h1>
+          <span class="text-[10px] relative bottom-2">BANQUE</span>
         </div>
-      } @else if (this.goToClient || this.goToAgent){
-        <div class="avatar online">
-          <div class="w-[40px] rounded-full cursor-pointer">
-            <img src="https://t4.ftcdn.net/jpg/05/49/98/39/360_F_549983970_bRCkYfk0P6PP5fKbMhZMIb07mCJ6esXL.jpg" />
+      </a>
+      <div class="flex items-center gap-4">
+     <span class="w-[40px] h-[40px] flex items-center justify-center border rounded-full hover:cursor-pointer">
+       <i class='bx bx-search '></i>
+     </span>
+        <span routerLink="contact"  class="w-[40px] h-[40px] flex items-center justify-center border rounded-full hover:cursor-pointer">
+      <i class='bx bx-phone' ></i>
+     </span>
+        <span routerLink="contact"  class="w-[40px] h-[40px] flex items-center justify-center border rounded-full hover:cursor-pointer">
+       <i class='bx bx-envelope' ></i>
+     </span>
+       <div class="relative">
+         <button (click)="select()" class="flex items-center gap-1">
+           <img class="w-[30px] h-[30px] rounded-full" [src]="lang" >
+           <i class='bx bxs-chevron-down'></i>
+         </button>
+         @if(isSelected){
+           <ul class="flex flex-col gap-3 absolute top-[60px] left-[-9px] bg-white shadow-lg rounded  p-[15px]">
+             <li (click)="selectfR('fr')" class="cursor-pointer">
+               <img class="w-[30px] h-[30px] rounded-full" src="https://img.freepik.com/vecteurs-libre/illustration-du-drapeau-france_53876-27099.jpg?semt=ais_hybrid">
+             </li>
+             <li (click)="selectfR('en')" class="cursor-pointer">
+               <img class="w-[30px] h-[30px] rounded-full" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Flag_of_the_United_Kingdom_%283-5%29.svg/2560px-Flag_of_the_United_Kingdom_%283-5%29.svg.png">
+             </li>
+           </ul>
+         }
+       </div>
+        @if (this.goToAgent){
+          <div class="avatar online relative">
+            <div  class="w-[40px] rounded-full cursor-pointer">
+              <img  (click)="showProfile()" src="https://t4.ftcdn.net/jpg/05/49/98/39/360_F_549983970_bRCkYfk0P6PP5fKbMhZMIb07mCJ6esXL.jpg" />
+            </div>
+            @if (isShowProfile){
+              <ul
+                class="absolute top-[150%] left-[20%]  translate-x-[-50%] z-10 min-w-[190px] overflow-auto rounded-lg border border-slate-200 bg-white p-1.5 shadow-lg  focus:outline-none"
+              >
+                <li routerLink="profile/overview"
+                  role="menuitem"
+                  class="cursor-pointer text-slate-800 flex w-full text-sm items-center rounded-md p-3 transition-all hover:bg-slate-100 focus:bg-slate-100 active:bg-slate-100"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 text-slate-400">
+                    <path fill-rule="evenodd" d="M18 10a8 8 0 1 1-16 0 8 8 0 0 1 16 0Zm-5.5-2.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0ZM10 12a5.99 5.99 0 0 0-4.793 2.39A6.483 6.483 0 0 0 10 16.5a6.483 6.483 0 0 0 4.793-2.11A5.99 5.99 0 0 0 10 12Z" clip-rule="evenodd" />
+                  </svg>
+
+                  <p class="text-slate-800 font-medium ml-2">
+                    {{'user.profile.profile' | translate}}
+                  </p>
+                </li>
+                <li (click)="goToOpenAccount()"
+                    role="menuitem"
+                    class="cursor-pointer text-slate-800 flex w-full text-sm items-center rounded-md p-3 transition-all hover:bg-slate-100 focus:bg-slate-100 active:bg-slate-100"
+                >
+
+                  <svg  class="w-5 h-5 text-slate-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M11 2.5L20 7v2H2V7zm4 7.5h4v8h-4zM2 22v-3h18v3zm7-12h4v8H9zm-6 0h4v8H3zm0 10v1h16v-1zm1-9v6h2v-6zm6 0v6h2v-6zm6 0v6h2v-6zM3 8h16v-.4l-8-4.02L3 7.6z"/></svg>
+
+                  <p class="text-slate-800 font-medium ml-2">
+                    {{'user.profile.openAccount' | translate}}
+                  </p>
+                </li>
+                <li (click)="goToManageAccount()"
+                    role="menuitem"
+                    class="cursor-pointer text-slate-800 flex w-full text-sm items-center rounded-md p-3 transition-all hover:bg-slate-100 focus:bg-slate-100 active:bg-slate-100"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 text-slate-400">
+                    <path fill-rule="evenodd" d="M7.84 1.804A1 1 0 0 1 8.82 1h2.36a1 1 0 0 1 .98.804l.331 1.652a6.993 6.993 0 0 1 1.929 1.115l1.598-.54a1 1 0 0 1 1.186.447l1.18 2.044a1 1 0 0 1-.205 1.251l-1.267 1.113a7.047 7.047 0 0 1 0 2.228l1.267 1.113a1 1 0 0 1 .206 1.25l-1.18 2.045a1 1 0 0 1-1.187.447l-1.598-.54a6.993 6.993 0 0 1-1.929 1.115l-.33 1.652a1 1 0 0 1-.98.804H8.82a1 1 0 0 1-.98-.804l-.331-1.652a6.993 6.993 0 0 1-1.929-1.115l-1.598.54a1 1 0 0 1-1.186-.447l-1.18-2.044a1 1 0 0 1 .205-1.251l1.267-1.114a7.05 7.05 0 0 1 0-2.227L1.821 7.773a1 1 0 0 1-.206-1.25l1.18-2.045a1 1 0 0 1 1.187-.447l1.598.54A6.992 6.992 0 0 1 7.51 3.456l.33-1.652ZM10 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" clip-rule="evenodd" />
+                  </svg>
+
+                  <p class="text-slate-800 font-medium ml-2">
+                    {{'user.profile.manageAccount' | translate}}
+                  </p>
+                </li>
+                <li routerLink="contact"
+                    role="menuitem"
+                    class="cursor-pointer text-slate-800 flex w-full text-sm items-center rounded-md p-3 transition-all hover:bg-slate-100 focus:bg-slate-100 active:bg-slate-100"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 text-slate-400">
+                    <path fill-rule="evenodd" d="M18 10a8 8 0 1 1-16 0 8 8 0 0 1 16 0ZM8.94 6.94a.75.75 0 1 1-1.061-1.061 3 3 0 1 1 2.871 5.026v.345a.75.75 0 0 1-1.5 0v-.5c0-.72.57-1.172 1.081-1.287A1.5 1.5 0 1 0 8.94 6.94ZM10 15a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z" clip-rule="evenodd" />
+                  </svg>
+
+                  <p class="text-slate-800 font-medium ml-2">
+                    {{'user.profile.help' | translate}}
+                  </p>
+                </li>
+                <hr class="my-2 border-slate-200" role="menuitem" />
+                <li (click)="logout()"
+                    role="menuitem"
+                    class="cursor-pointer text-slate-800 flex w-full text-sm items-center rounded-md p-3 transition-all hover:bg-slate-100 focus:bg-slate-100 active:bg-slate-100"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 text-slate-400">
+                    <path fill-rule="evenodd" d="M3 4.25A2.25 2.25 0 0 1 5.25 2h5.5A2.25 2.25 0 0 1 13 4.25v2a.75.75 0 0 1-1.5 0v-2a.75.75 0 0 0-.75-.75h-5.5a.75.75 0 0 0-.75.75v11.5c0 .414.336.75.75.75h5.5a.75.75 0 0 0 .75-.75v-2a.75.75 0 0 1 1.5 0v2A2.25 2.25 0 0 1 10.75 18h-5.5A2.25 2.25 0 0 1 3 15.75V4.25Z" clip-rule="evenodd" />
+                    <path fill-rule="evenodd" d="M19 10a.75.75 0 0 0-.75-.75H8.704l1.048-.943a.75.75 0 1 0-1.004-1.114l-2.5 2.25a.75.75 0 0 0 0 1.114l2.5 2.25a.75.75 0 1 0 1.004-1.114l-1.048-.943h9.546A.75.75 0 0 0 19 10Z" clip-rule="evenodd" />
+                  </svg>
+
+                  <p class="text-slate-800 font-medium ml-2">
+                    {{'user.profile.logout' | translate}}
+                  </p>
+                </li>
+              </ul>
+            }
           </div>
-        </div>
-      } @else {
-        <button class="btn btn-accent" (click)="login()">{{'nav.login' | translate}}</button>
-      }
+        } @else if (this.goToClient){
+          <div class="avatar online relative">
+            <div  class="w-[40px] rounded-full cursor-pointer">
+              <img  (click)="showProfile()" src="https://t4.ftcdn.net/jpg/05/49/98/39/360_F_549983970_bRCkYfk0P6PP5fKbMhZMIb07mCJ6esXL.jpg" />
+            </div>
+            @if (isShowProfile){
+              <ul
+                class="absolute top-[150%] right-[-4em]   z-10 min-w-[190px] overflow-auto rounded-lg border border-slate-200 bg-white p-1.5 shadow-lg  focus:outline-none"
+              >
+                <li routerLink="profileClient/overviewClient"
+                    role="menuitem"
+                    class="cursor-pointer text-slate-800 flex w-full text-sm items-center rounded-md p-3 transition-all hover:bg-slate-100 focus:bg-slate-100 active:bg-slate-100"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 text-slate-400">
+                    <path fill-rule="evenodd" d="M18 10a8 8 0 1 1-16 0 8 8 0 0 1 16 0Zm-5.5-2.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0ZM10 12a5.99 5.99 0 0 0-4.793 2.39A6.483 6.483 0 0 0 10 16.5a6.483 6.483 0 0 0 4.793-2.11A5.99 5.99 0 0 0 10 12Z" clip-rule="evenodd" />
+                  </svg>
 
+                  <p class="text-slate-800 font-medium ml-2">
+                    {{'client.options.profile' | translate}}
+                  </p>
+                </li>
+                <li routerLink="client/paiement"
+                    role="menuitem"
+                    class="text-nowrap cursor-pointer text-slate-800 flex w-full text-sm items-center rounded-md p-3 transition-all hover:bg-slate-100 focus:bg-slate-100 active:bg-slate-100"
+                >
 
+                  <i class='bx bx-credit-card text-slate-400 text-xl'></i>
+
+                  <p class="text-slate-800 font-medium ml-2">
+                    {{'client.options.payment' | translate}}
+                  </p>
+                </li>
+                <li routerLink="client/portefeuille/allcompte"
+                    role="menuitem"
+                    class="cursor-pointer text-slate-800 flex w-full text-sm items-center rounded-md p-3 transition-all hover:bg-slate-100 focus:bg-slate-100 active:bg-slate-100"
+                >
+                  <i class='bx bxs-wallet text-slate-400 text-xl'></i>
+
+                  <p class="text-slate-800 font-medium ml-2">
+                    {{'client.options.cryptocurrencies' | translate}}
+                  </p>
+                </li>
+                <li routerLink="contact"
+                    role="menuitem"
+                    class="cursor-pointer text-slate-800 flex w-full text-sm items-center rounded-md p-3 transition-all hover:bg-slate-100 focus:bg-slate-100 active:bg-slate-100"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 text-slate-400">
+                    <path fill-rule="evenodd" d="M18 10a8 8 0 1 1-16 0 8 8 0 0 1 16 0ZM8.94 6.94a.75.75 0 1 1-1.061-1.061 3 3 0 1 1 2.871 5.026v.345a.75.75 0 0 1-1.5 0v-.5c0-.72.57-1.172 1.081-1.287A1.5 1.5 0 1 0 8.94 6.94ZM10 15a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z" clip-rule="evenodd" />
+                  </svg>
+
+                  <p class="text-slate-800 font-medium ml-2">
+                    {{'client.options.help' | translate}}
+                  </p>
+                </li>
+                <hr class="my-2 border-slate-200" role="menuitem" />
+                <li (click)="logout()"
+                    role="menuitem"
+                    class="cursor-pointer text-slate-800 flex w-full text-sm items-center rounded-md p-3 transition-all hover:bg-slate-100 focus:bg-slate-100 active:bg-slate-100"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 text-slate-400">
+                    <path fill-rule="evenodd" d="M3 4.25A2.25 2.25 0 0 1 5.25 2h5.5A2.25 2.25 0 0 1 13 4.25v2a.75.75 0 0 1-1.5 0v-2a.75.75 0 0 0-.75-.75h-5.5a.75.75 0 0 0-.75.75v11.5c0 .414.336.75.75.75h5.5a.75.75 0 0 0 .75-.75v-2a.75.75 0 0 1 1.5 0v2A2.25 2.25 0 0 1 10.75 18h-5.5A2.25 2.25 0 0 1 3 15.75V4.25Z" clip-rule="evenodd" />
+                    <path fill-rule="evenodd" d="M19 10a.75.75 0 0 0-.75-.75H8.704l1.048-.943a.75.75 0 1 0-1.004-1.114l-2.5 2.25a.75.75 0 0 0 0 1.114l2.5 2.25a.75.75 0 1 0 1.004-1.114l-1.048-.943h9.546A.75.75 0 0 0 19 10Z" clip-rule="evenodd" />
+                  </svg>
+
+                  <p class="text-slate-800 font-medium ml-2">
+                    {{'client.options.logout' | translate}}
+                  </p>
+                </li>
+              </ul>
+            }
+          </div>
+        }
+
+        @else if (this.goToClient || this.goToAgent){
+          <div class="avatar online">
+            <div class="w-[40px] rounded-full cursor-pointer">
+              <img src="https://t4.ftcdn.net/jpg/05/49/98/39/360_F_549983970_bRCkYfk0P6PP5fKbMhZMIb07mCJ6esXL.jpg" />
+            </div>
+          </div>
+        } @else {
+          <button class="btn btn-primary rounded-full px-6 py-0" (click)="login()">{{'nav.login' | translate}}</button>
+        }
+        <!--<button (click)="login()" class="btn btn-primary rounded-full px-6 py-0">
+          {{'nav.login' | translate}}
+        </button>-->
+      </div>
     </div>
-  </div>
+  </nav>
 </div>
+
+

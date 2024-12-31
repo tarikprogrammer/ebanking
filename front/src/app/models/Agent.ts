@@ -5,13 +5,13 @@ export class Agent{
   email?:String
   phone?:string
   password?:string
-  language?:Language
+  name?:string
 
-  constructor(email?: string, phone?: string, password?: string,language?:Language) {
+  constructor(email?: string, phone?: string, password?: string,name?:string) {
     this.email = email;
     this.phone = phone;
     this.password = password;
-    this.language = language;
+    this.name = name;
   }
 
 }

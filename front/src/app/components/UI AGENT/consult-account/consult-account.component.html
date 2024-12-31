@@ -1,43 +1,148 @@
-<div class="w-[80%] mx-auto pb-4">
+<div class="w-[90%] mx-auto pb-4 mt-10">
   <div class="w-full">
-    <div class="sm:col-span-3 mt-5">
-      <label for="first-name" class="block text-sm/6 font-medium text-gray-900">{{'agent.consultAccount.search' | translate}}</label>
-      <div class="mt-2">
-        <input type="text" name="first-name" id="first-name" autocomplete="given-name" class=" w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
-      </div>
-    </div>
-    <div class="mt-14 grid grid-cols-3 gap-8">
-
-      <div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-        <div class="flex justify-end px-4 pt-4">
-          <button id="dropdownButton" data-dropdown-toggle="dropdown" class="inline-block text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-1.5" type="button">
-            <span class="sr-only">Open dropdown</span>
-            <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 3">
-              <path d="M2 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Zm6.041 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM14 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Z"/>
-            </svg>
-          </button>
-          <!-- Dropdown menu -->
-        </div>
-        <div class="flex flex-col items-center pb-10">
-          <img class="w-24 h-24 mb-3 rounded-full shadow-lg" src="https://t4.ftcdn.net/jpg/05/49/98/39/360_F_549983970_bRCkYfk0P6PP5fKbMhZMIb07mCJ6esXL.jpg" alt="Bonnie image"/>
-          <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white">Bonnie Green</h5>
-          <span class="text-sm text-gray-500 dark:text-gray-400">Visual Designer</span>
-          <div class="flex mt-4 md:mt-6">
-            <a (click)="reviewClientByAgent()" routerLink="review" class="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">{{'agent.consultAccount.action1' | translate}}</a>
-            <a (click)="editClientByAgent()" routerLink="edit" class="py-2 px-4 ms-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">{{'agent.consultAccount.action2' | translate}}</a>
+    <div>
+      <h1 class="text-center font-medium text-[#232323] text-4xl w-[50%] mx-auto leading-[60px] mb-10">{{'consultAccount.title' | translate}}</h1>
+      <div class="w-full flex  justify-end items-center mb-3 mt-1 pl-3">
+        <div class="ml-3">
+          <div class="w-full max-w-sm min-w-[200px] relative">
+            <div class="relative">
+              <input
+                class="bg-white w-full pr-11 h-10 pl-3 py-2 bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded transition duration-200 ease focus:outline-none focus:border-slate-400 hover:border-slate-400 shadow-sm focus:shadow-md"
+                [placeholder]="'consultAccount.search' | translate"
+              />
+              <button
+                class="absolute h-8 w-8 right-1 top-1 my-auto px-2 flex items-center bg-white rounded "
+                type="button"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="w-8 h-8 text-slate-600">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+                </svg>
+              </button>
+            </div>
           </div>
         </div>
       </div>
 
-    </div>
-    <div class="mt-6 grid grid-cols-1 justify-items-center">
-      <div class="join ">
-        <button class="join-item btn">1</button>
-        <button class="join-item btn">2</button>
-        <button class="join-item btn btn-disabled">...</button>
-        <button class="join-item btn">99</button>
-        <button class="join-item btn">100</button>
+      <div class="relative flex flex-col w-full h-full overflow-scroll text-gray-700 bg-white  shadow bg-clip-border">
+        <table class="w-full text-left table-auto">
+          <thead>
+          <tr>
+            <th class="p-4 border-b border-slate-200 bg-slate-50">
+              <p class="text-sm font-normal leading-none text-slate-500">
+                {{'consultAccount.fullName' | translate}}
+              </p>
+            </th>
+            <th class="p-4 border-b border-slate-200 bg-slate-50">
+              <p class="text-sm font-normal leading-none text-slate-500">
+                {{'consultAccount.email' | translate}}
+              </p>
+            </th>
+            <th class="p-4 border-b border-slate-200 bg-slate-50">
+              <p class="text-sm font-normal leading-none text-slate-500">
+                {{'consultAccount.phone' | translate}}
+              </p>
+            </th>
+            <th class="p-4 border-b border-slate-200 bg-slate-50">
+              <p class="text-sm font-normal leading-none text-slate-500">
+                {{'consultAccount.AccountType' | translate}}
+              </p>
+            </th>
+            <th class="p-4 border-b border-slate-200 bg-slate-50">
+              <p class="text-sm font-normal leading-none text-slate-500">
+                {{'consultAccount.Cardbank' | translate}}
+              </p>
+            </th>
+            <th class="p-4 border-b border-slate-200 bg-slate-50">
+              <p class="text-sm font-normal leading-none text-slate-500">
+                {{'consultAccount.tempororyCard' | translate}}
+              </p>
+            </th>
+            <th class="p-4 border-b border-slate-200 bg-slate-50">
+              <p class="text-sm font-normal leading-none text-slate-500">
+                {{'consultAccount.actions' | translate}}
+              </p>
+            </th>
+          </tr>
+          </thead>
+          <tbody>
+            @for (item of this.list;track item){
+              <tr class="hover:bg-slate-50 border-b border-slate-200">
+                <td class="p-4 py-5">
+                  <p class=" font-semibold text-sm text-slate-800 flex items-center gap-4">
+                <span class="w-[30px] avatar  rounded-full cursor-pointer" >
+                  <img  src="https://t4.ftcdn.net/jpg/05/49/98/39/360_F_549983970_bRCkYfk0P6PP5fKbMhZMIb07mCJ6esXL.jpg" />
+                </span>
+                    <span>{{item.fname + " "+item.lname}}</span>
+                  </p>
+                </td>
+                <td class="p-4 py-5">
+                  <p class="text-sm text-slate-500">{{item.email}}</p>
+                </td>
+                <td class="p-4 py-5">
+                  <p class="text-sm text-slate-500">{{item.phone}}</p>
+                </td>
+                <td class="p-4 py-5">
+                  <p class="text-sm text-slate-500">
+                    @if(item.account){
+                      {{item.account.accountName}}
+                    }@else{
+                       {{'event.undefined' | translate}}
+                    }
+
+                  </p>
+                </td>
+                <td class="p-4 py-5">
+                  <p class="text-sm text-slate-500">
+                     @if(item.account){
+                       <span class="badge badge-md badge-success text-white">
+                          {{'consultAccount.Activated' | translate}}
+                       </span>
+
+                     }@else{
+                       <span class="badge badge-md badge-error text-white">
+                         {{'consultAccount.NotActivated' | translate}}
+                       </span>
+                     }
+                  </p>
+                </td>
+                <td class="p-4 py-5">
+                  <span class="badge badge-md badge-error text-white">{{'consultAccount.NotActivated' | translate}}</span>
+                </td>
+                <td class="p-4 py-5">
+                  <div class="flex items-center gap-2 w-full" >
+                    <button routerLink="card"  class="btn btn-sm btn-active w-[50%]  rounded-full">{{'consultAccount.edit' | translate}}</button>
+                    @if (!item.locked){
+                      <button (click)="changeVisibility(item.email)"   class="btn btn-sm btn-outline btn-info text-white w-[50%]   rounded-full">{{'event.locked' | translate}}</button>
+                    }@else{
+                      <button (click)="changeVisibility(item.email)"   class="btn btn-sm btn-outline btn-info text-white w-[50%]   rounded-full">{{'event.unlocked' | translate}}</button>
+                    }
+                  </div>
+                </td>
+              </tr>
+            }
+          </tbody>
+        </table>
+
+        <div class="flex justify-between items-center px-4 py-3">
+          <div class="text-sm text-slate-500">
+            Showing <b>1-4</b> of {{this.totalElements}}
+          </div>
+          <div class="flex space-x-1">
+            <button (click)="decrementPage(page)" class="px-3 py-1 min-w-9 min-h-9 text-sm font-normal text-slate-500 bg-white border border-slate-200 rounded hover:bg-slate-50 hover:border-slate-400 transition duration-200 ease">
+              Prev
+            </button>
+            @for (counter of this.numbers;track counter){
+              <button [ngClass]="(counter) == page ? 'bg-slate-800 text-white':'text-slate-800'" class="px-3 py-1 min-w-9 min-h-9 text-sm font-normal   border border-slate-800 rounded  hover:border-slate-600 transition duration-200 ease">
+               {{counter+1}}
+              </button>
+            }
+            <button (click)="incrementPage(page)" class="px-3 py-1 min-w-9 min-h-9 text-sm font-normal text-slate-500 bg-white border border-slate-200 rounded hover:bg-slate-50 hover:border-slate-400 transition duration-200 ease">
+              Next
+            </button>
+          </div>
+        </div>
       </div>
+
     </div>
   </div>
 </div>

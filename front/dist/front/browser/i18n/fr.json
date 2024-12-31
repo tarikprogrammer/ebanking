@@ -1,0 +1,210 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "about": "À propos de nous",
+    "service": "Services",
+    "contact": "Contact nous",
+    "login": "Se Connecter"
+  },
+  "header": {
+    "title": "Bienvenue sur notre plateforme de banque en ligne",
+    "subTitle": "Vivez une expérience bancaire en ligne fluide et sécurisée à portée de main. Gérez vos finances de manière pratique, où que vous soyez, à tout moment.",
+    "login": "Connectez-vous",
+    "Hssab1": {
+      "subTitle":"Notre offre vous permet d’effectuer des paiements et des transactions sécurisés avec un plafond de 200 DH. Idéale pour les petites dépenses quotidiennes, notre solution garantit simplicité et rapidité. Profitez d’un service fiable et adapté à vos besoins. Inscrivez-vous dès maintenant pour découvrir tous les avantages !"
+    },
+    "Hssab2": {
+      "subTitle":"Notre offre vous permet d’effectuer des paiements et des transactions sécurisés jusqu’à un montant de 10 000 DH. Parfaite pour les opérations importantes, elle combine fiabilité et efficacité. Gérez vos finances en toute sérénité avec notre service optimisé. Rejoignez-nous dès aujourd’hui pour profiter de cette solution !"
+    },
+    "Hssab3": {
+      "subTitle":"Notre offre vous permet d’effectuer des paiements et des transactions sécurisés jusqu’à un montant de 15 000 DH. Conçue pour les grandes opérations, elle garantit performance et sécurité. Simplifiez vos transactions tout en bénéficiant d’un service premium. Inscrivez-vous dès maintenant pour en profiter pleinement !"
+    },
+    "Hssab4": {
+      "subTitle":"Notre offre vous permet d’effectuer des paiements et des transactions sécurisés jusqu’à un montant de 20 000 DH. Idéale pour vos transactions de grande envergure, elle allie rapidité et sécurité. Gérez vos opérations avec confiance grâce à notre solution fiable. Rejoignez-nous dès aujourd’hui pour découvrir ses avantages !"
+    }
+  },
+  "features": {
+    "part1": {
+      "title": "Pourquoi ouvrir un compte bancaire en ligne chez FlowPay ?"
+
+    },
+    "part2": {
+      "title1": "Ouvrez votre compte et activez votre portefeuille numérique dès maintenant.",
+      "subTitle1": "Profitez d’une gestion simple et sécurisée de vos finances, avec des paiements sans frontières et des services innovants à portée de main.",
+      "title2": "Ouverture de compte et gestion de votre argent 100% en ligne.",
+      "subTitle2": "C’est mieux quand c’est simple !",
+      "title3": "C’est mieux quand c’est simple !",
+      "subTitle3": "Virements instantanés gratuits, cartes virtuelles pour faire vos achats de manière sécurisée, etc."
+    },
+    "partenaire": {
+      "title": "Payez vos factures en ligne sans quitter votre domicile et en toute sécurité",
+      "subTitle": "Des paiements rapides, simples et sécurisés depuis le confort de votre maison."
+    }
+  },
+  "agentfeatures": {
+    "title": "Comment ouvrir un compte bancaire en ligne chez FlowPay ?",
+    "title1": "Besoin d’aide pour ouvrir un compte ? ",
+    "subTitle1": "Contactez un agent dès maintenant et accédez rapidement à l’application FlowPay pour gérer vos finances en toute simplicité.",
+    "title2": "Besoin d’aide pour ouvrir un compte bancaire ?",
+    "subTitle2": "Contactez un agent dès maintenant et ouvrir votre compte bancaire chez nous facillement et rapide .",
+    "title3": "Activation immédiate du compte bancaire.",
+    "subTitle3": "Des agents ont ouvert votre espace de compte bancaire. Vous pouvez maintenant commencer à effectuer des achats et des transactions de manière sécurisée et facile.",
+    "button": "Contacter nos agents",
+    "title4": "Un Service Clients accueillant, disponible et réactif",
+    "subTitle4":"Un service client 100% en Maroc, joignable du lundi au samedi, par téléphone, e-mail et chat.",
+    "link": "Nous contacter"
+
+  },
+  "loginForm": {
+    "title": "Connectez-vous à votre compte",
+    "field1": "Adresse e-mail",
+    "field2": "Mot de passe",
+    "forgotPassword": "Mot de passe oublié ?",
+    "login": "Se connecter"
+  },
+  "enterYourEmailToResetPassword": {
+    "title": "Entrez votre e-mail pour réinitialiser le mot de passe",
+    "email": "Adresse e-mail",
+    "login": "Envoyer"
+  },
+  "enterNewPassword": {
+    "title": "Entrez un nouveau mot de passe",
+    "newPassword": "Nouveau mot de passe",
+    "confirmPassword": "Confirmer le mot de passe",
+    "login": "Soumettre"
+  },
+  "agent": {
+    "account": "Ajouter Nouveau Client",
+    "addClient": {
+      "firstname": "Prénom",
+      "lastname": "Nom de famille",
+      "email": "Adresse e-mail",
+      "confirmEmail": "Confirmer l'adresse e-mail",
+      "title": "Informations personnelles",
+      "button": "Suivant",
+      "identityDocument": "Pièce d'identité",
+      "phone": "Numéro de téléphone",
+      "numberIdentityDocument": "N° de pièce d'identité",
+      "dateNaissance": "Date de naissance",
+      "address": "Adresse",
+      "CommercialRegisterRegistrationNumber": "Numéro d'immatriculation au registre de commerce (optionnel)",
+      "TaxIdentificationNumber": "N° de patente (optionnel)",
+      "createClient": "Créer",
+      "back": "Retour"
+    },
+    "souscriptions": {
+      "title": "Ouverture d'un compte de paiement",
+      "subTitle": "Informations personnelles",
+      "firstname": "Prénom",
+      "lastname": "Nom de famille",
+      "email": "Adresse e-mail",
+      "phone": "Numéro de téléphone",
+      "product": "Sélectionner un produit",
+      "account": {
+        "account1": "Hssab 1 - Plafond : 200 MAD",
+        "account2": "Hssab 2 - Plafond : 10 000 MAD",
+        "account3": "Hssab 3 - Plafond :  15 000 MAD",
+        "account4": "Hssab 4 - Plafond :  20 000 MAD"
+      },
+      "informationClient": "Informations Client",
+      "openAccount":"Ouvrir un compte"
+    },
+    "consultAccount": {
+      "title": "Consultation des comptes clients et gestion des cartes virtuelles",
+      "search": "Chercher par Email-Addresse ou Numero de télephone",
+      "action1": "Consulter",
+      "action2": "Modifier"
+    }
+  },
+  "LearMore": {
+    "title": "Retrouvez toutes les réponses à vos questions",
+    "wl": {
+      "section1": {
+        "title": "Qu'est-ce que FlowPay ?",
+        "desc": "FlowPay est une application d'e-banking qui vous permet de gérer vos finances personnelles, effectuer des paiements et consulter vos transactions en toute sécurité."
+      },
+      "section2": {
+        "title": "Qui peut utiliser FlowPay ?",
+        "desc": "Toute personne possédant un compte bancaire auprès des banques partenaires."
+      },
+      "section3": {
+        "title": "FlowPay est-il disponible en plusieurs langues ?",
+        "desc": "Oui, FlowPay prend en charge plusieurs langues, notamment le français et l'anglais."
+      },
+      "section4": {
+        "title": "FlowPay est-il sécurisé ?",
+        "desc": "Absolument. FlowPay utilise des protocoles de cryptage avancés (SSL/TLS) et une authentification à deux facteurs (2FA) pour garantir la sécurité de vos données."
+      },
+      "section5": {
+        "title": "Comment créer un compte sur FlowPay ?",
+        "desc": "Accédez à notre plateforme, inscrivez-vous avec votre adresse e-mail et liez vos comptes bancaires en suivant les étapes guidées."
+      }
+    }
+  },
+  "user": {
+    "profile": {
+      "profile": "Mon Profil",
+      "openAccount": "Ouvrir un compte",
+      "manageAccount": "Gérer le compte",
+      "help": "Aide",
+      "logout": "Se déconnecter"
+    }
+  },
+  "contact": {
+    "title": "Contactez - nous !",
+    "acceuil": "Acceuil",
+    "contact": "Conatct",
+    "email": {
+      "titile": "E-mail",
+      "text": "Ecrivez-nous pour nous faire part de vos demandes ou de vos questions, nos conseillers vous répondront par e-mail."
+    },
+    "phone": {
+      "titile": "Téléphone",
+      "text": "Nos conseillers sont à votre écoute pour répondre à toutes vos questions."
+    },
+    "button": "Choisir"
+  },
+  "consultAccount": {
+    "fullName": "Nom complet",
+    "email": "E-mail",
+    "phone": "Téléphone",
+    "AccountType": "Type de compte",
+    "Cardbank": "Carte bancaire",
+    "tempororyCard": "Carte temporaire",
+    "actions": "Actions",
+    "edit": "Modifier",
+    "close": "Fermer",
+    "Activated": "Activé",
+    "NotActivated": "Non activé",
+    "title": "Gérer des clients ",
+    "search": "chercher par email"
+  },
+  "cardTemp": {
+    "title": "Ajouter une nouvelle carte virtuelle pour faire des achats , transactions  ... ",
+    "firstName": "Prénom",
+    "lastName": "Nom",
+    "amount": "Solde",
+    "expireAt": "Expiré à",
+    "button": "Ajouter carte"
+  },
+  "profileAgent": {
+    "title": "Gérer votre Profile",
+    "overview": "Accueil",
+    "changePassword": "Changer le mot de passe",
+    "claim": "Réclamation",
+    "fullName": "Nom complet",
+    "address": "Adresse",
+    "role": "Agent",
+    "phone": "Téléphone",
+    "accountType": "Type de compte",
+    "newPass": "Nouveau mot de passe",
+    "confirmPass": "Confirmer le mot de passe",
+    "claimMessage": "Entrez votre réclamation ici",
+    "sendToadmin": "Envoyer à l'administrateur"
+  },
+  "event": {
+    "loading": "en cours ...",
+    "emailExist": "Email existant, essayez de le changer pour passer à l’étape suivante !",
+    "undefined": "Non défini"
+  }
+}

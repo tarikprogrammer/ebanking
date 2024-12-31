@@ -10,18 +10,31 @@
     "title": "Bienvenue sur notre plateforme de banque en ligne",
     "subTitle": "Vivez une expérience bancaire en ligne fluide et sécurisée à portée de main. Gérez vos finances de manière pratique, où que vous soyez, à tout moment.",
     "login": "Connectez-vous",
-    "learnMore": "En savoir plus"
+    "Hssab1": {
+      "subTitle":"Notre offre vous permet d’effectuer des paiements et des transactions sécurisés avec un plafond de 200 DH. Idéale pour les petites dépenses quotidiennes, notre solution garantit simplicité et rapidité. Profitez d’un service fiable et adapté à vos besoins. Inscrivez-vous dès maintenant pour découvrir tous les avantages !"
+    },
+    "Hssab2": {
+      "subTitle":"Notre offre vous permet d’effectuer des paiements et des transactions sécurisés jusqu’à un montant de 10 000 DH. Parfaite pour les opérations importantes, elle combine fiabilité et efficacité. Gérez vos finances en toute sérénité avec notre service optimisé. Rejoignez-nous dès aujourd’hui pour profiter de cette solution !"
+    },
+    "Hssab3": {
+      "subTitle":"Notre offre vous permet d’effectuer des paiements et des transactions sécurisés jusqu’à un montant de 15 000 DH. Conçue pour les grandes opérations, elle garantit performance et sécurité. Simplifiez vos transactions tout en bénéficiant d’un service premium. Inscrivez-vous dès maintenant pour en profiter pleinement !"
+    },
+    "Hssab4": {
+      "subTitle":"Notre offre vous permet d’effectuer des paiements et des transactions sécurisés jusqu’à un montant de 20 000 DH. Idéale pour vos transactions de grande envergure, elle allie rapidité et sécurité. Gérez vos opérations avec confiance grâce à notre solution fiable. Rejoignez-nous dès aujourd’hui pour découvrir ses avantages !"
+    }
   },
   "features": {
     "part1": {
-      "title1": "Rencontrez l'argent",
-      "title2": "sans frontières",
-      "subTitle": "Nous construisons le meilleur moyen de transférer et de gérer l'argent dans le monde. Frais minimums. Facilité maximale. Rapidité totale.",
-      "button": "En savoir plus"
+      "title": "Pourquoi ouvrir un compte bancaire en ligne chez FlowPay ?"
+
     },
     "part2": {
-      "title": "Transactions d'argent sans effort, à tout moment",
-      "subTitle": "FlowPay simplifie les transactions d'argent en ligne avec rapidité, sécurité et commodité. Que vous gériez des factures, transfériez des fonds ou suiviez des paiements, FlowPay garantit une expérience fluide et conviviale sur tous les appareils."
+      "title1": "Ouvrez votre compte et activez votre portefeuille numérique dès maintenant.",
+      "subTitle1": "Profitez d’une gestion simple et sécurisée de vos finances, avec des paiements sans frontières et des services innovants à portée de main.",
+      "title2": "Ouverture de compte et gestion de votre argent 100% en ligne.",
+      "subTitle2": "C’est mieux quand c’est simple !",
+      "title3": "C’est mieux quand c’est simple !",
+      "subTitle3": "Virements instantanés gratuits, cartes virtuelles pour faire vos achats de manière sécurisée, etc."
     },
     "partenaire": {
       "title": "Payez vos factures en ligne sans quitter votre domicile et en toute sécurité",
@@ -29,14 +42,18 @@
     }
   },
   "agentfeatures": {
-    "title": "Ouvrez votre compte avec notre agent : Simple et rapide",
-    "subTitle": "Notre agent vous guidera tout au long du processus de création de compte, garantissant une expérience fluide et efficace. Que vous soyez à la maison ou en déplacement, vous pouvez facilement fournir les documents nécessaires et compléter le processus sans avoir à vous rendre dans une agence bancaire."
-  },
-  "contact": {
-    "title": "VOUS AVEZ DES QUESTIONS ?",
-    "phone": "APPELEZ-NOUS",
-    "email": "ENVOYEZ-NOUS UN EMAIL",
-    "map": "TROUVEZ-NOUS"
+    "title": "Comment ouvrir un compte bancaire en ligne chez FlowPay ?",
+    "title1": "Besoin d’aide pour ouvrir un compte ? ",
+    "subTitle1": "Contactez un agent dès maintenant et accédez rapidement à l’application FlowPay pour gérer vos finances en toute simplicité.",
+    "title2": "Besoin d’aide pour ouvrir un compte bancaire ?",
+    "subTitle2": "Contactez un agent dès maintenant et ouvrir votre compte bancaire chez nous facillement et rapide .",
+    "title3": "Activation immédiate du compte bancaire.",
+    "subTitle3": "Des agents ont ouvert votre espace de compte bancaire. Vous pouvez maintenant commencer à effectuer des achats et des transactions de manière sécurisée et facile.",
+    "button": "Contacter nos agents",
+    "title4": "Un Service Clients accueillant, disponible et réactif",
+    "subTitle4":"Un service client 100% en Maroc, joignable du lundi au samedi, par téléphone, e-mail et chat.",
+    "link": "Nous contacter"
+
   },
   "loginForm": {
     "title": "Connectez-vous à votre compte",
@@ -70,8 +87,8 @@
       "numberIdentityDocument": "N° de pièce d'identité",
       "dateNaissance": "Date de naissance",
       "address": "Adresse",
-      "CommercialRegisterRegistrationNumber": "Numéro d'immatriculation au registre de commerce",
-      "TaxIdentificationNumber": "N° de patente",
+      "CommercialRegisterRegistrationNumber": "Numéro d'immatriculation au registre de commerce (optionnel)",
+      "TaxIdentificationNumber": "N° de patente (optionnel)",
       "createClient": "Créer",
       "back": "Retour"
     },
@@ -100,7 +117,7 @@
     }
   },
   "LearMore": {
-    "title": "En savoir plus",
+    "title": "Retrouvez toutes les réponses à vos questions",
     "wl": {
       "section1": {
         "title": "Qu'est-ce que FlowPay ?",
@@ -132,5 +149,87 @@
       "help": "Aide",
       "logout": "Se déconnecter"
     }
+  },
+  "contact": {
+    "title": "Contactez - nous !",
+    "acceuil": "Acceuil",
+    "contact": "Conatct",
+    "email": {
+      "titile": "E-mail",
+      "text": "Ecrivez-nous pour nous faire part de vos demandes ou de vos questions, nos conseillers vous répondront par e-mail."
+    },
+    "phone": {
+      "titile": "Téléphone",
+      "text": "Nos conseillers sont à votre écoute pour répondre à toutes vos questions."
+    },
+    "button": "Choisir"
+  },
+  "consultAccount": {
+    "fullName": "Nom complet",
+    "email": "E-mail",
+    "phone": "Téléphone",
+    "AccountType": "Type de compte",
+    "Cardbank": "Carte bancaire",
+    "tempororyCard": "Carte temporaire",
+    "actions": "Actions",
+    "edit": "Modifier",
+    "close": "Fermer",
+    "Activated": "Activé",
+    "NotActivated": "Non activé",
+    "title": "Gérer des clients ",
+    "search": "chercher par email"
+  },
+  "cardTemp": {
+    "title": "Ajouter une nouvelle carte virtuelle pour faire des achats , transactions  ... ",
+    "firstName": "Prénom",
+    "lastName": "Nom",
+    "amount": "Solde",
+    "expireAt": "Expiré à",
+    "button": "Ajouter carte"
+  },
+  "profileAgent": {
+    "title": "Gérer votre Profile",
+    "overview": "Accueil",
+    "changePassword": "Changer le mot de passe",
+    "claim": "Réclamation",
+    "fullName": "Nom complet",
+    "address": "Adresse",
+    "role": "Rôle",
+    "phone": "Téléphone",
+    "accountType": "Type de compte",
+    "newPass": "Nouveau mot de passe",
+    "confirmPass": "Confirmer le mot de passe",
+    "claimMessage": "Entrez votre réclamation ici",
+    "sendToadmin": "Envoyer à l'administrateur"
+  },
+  "event": {
+    "loading": "en cours ...",
+    "emailExist": "Email existant, essayez de le changer pour passer à l’étape suivante !",
+    "undefined": "Non défini",
+    "locked": "Verrouiller",
+    "unlocked": "Déverrouiller"
+  },
+  "transactionsSes": {
+    "titre": "Transférez votre argent en toute simplicité et en toute sécurité",
+    "miniTitre": "0 effort et FlowPay devient votre n°1",
+    "p1": "Vous souhaitez transférer tous vos virements et prélèvements récurrents de votre compte courant principal vers votre compte Fortuneo ? Vous n’avez qu’à demander ! Promis, c’est simple !",
+    "p2": "Un RIB et une signature en ligne suffisent : nous nous chargeons de toutes les démarches de mobilité bancaire auprès de vos différents organismes."
+  },
+  "client": {
+    "buttonTransactions": "Effectuer une Transaction",
+    "options": {
+      "profile": "Mon Profile",
+      "payment": "Effectuer un Paiement",
+      "help": "Aide",
+      "logout": "Se déconnecter",
+      "cryptocurrencies": "Portefeuille"
+    }
+  },
+  "payment": {
+    "title": "Paiements Rapides et Faciles",
+    "rechargeTitle": "Recharge Rapide pour Votre Mobile",
+    "abonnementTitle": "Gérez Vos Abonnements de Données",
+    "billTitle": "Gestion de Vos Factures d'Eau et d'Électricité",
+    "donationsTitle": "Ensemble Contre le VIH/SIDA : Comment Votre Don Peut Sauver des Vies"
   }
 }

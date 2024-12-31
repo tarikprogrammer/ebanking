@@ -1,0 +1,9 @@
+.container .blob{
+  border-radius: 94% 31% 30% 67% / 67% 37% 56% 34%;
+  width: 350px;
+  height: 350px;
+  background: #f09;
+  background-image: linear-gradient(45deg, #1c4ed8 0%, #f32020 100%);
+  box-shadow: -10vmin 10vmin 0 rgba(255,255,255,0.07);
+}
+

@@ -9,20 +9,34 @@
   "header": {
     "title": "Welcome to Our E-Banking Platform",
     "subTitle": "Experience seamless and secure online banking services at your fingertips. Manage your finances conveniently from anywhere, anytime.",
-    "login": "Sign in Now",
-    "learnMore": "Learn more"
+    "login": "Sign in",
+
+    "Hssab1": {
+      "subTitle": "Our offer allows you to make secure payments and transactions with a limit of 200 DH. Perfect for small daily expenses, our solution ensures simplicity and speed. Enjoy a reliable service tailored to your needs. Sign up now to discover all the benefits!"
+    },
+    "Hssab2": {
+      "subTitle": "Our offer allows you to make secure payments and transactions up to a limit of 10,000 DH. Ideal for significant operations, it combines reliability and efficiency. Manage your finances with peace of mind using our optimized service. Join us today to take advantage of this solution!"
+    },
+    "Hssab3": {
+      "subTitle": "Our offer allows you to make secure payments and transactions up to a limit of 15,000 DH. Designed for large operations, it guarantees performance and security. Simplify your transactions while enjoying a premium service. Sign up now to take full advantage!"
+    },
+    "Hssab4": {
+      "subTitle": "Our offer allows you to make secure payments and transactions up to a limit of 20,000 DH. Perfect for large-scale transactions, it combines speed and security. Manage your operations with confidence using our reliable solution. Join us today to discover its advantages!"
+    }
+
   },
   "features": {
     "part1": {
-      "title1": "Meet money",
-      "title2": "without borders",
-      "subTitle": "We’re building the best way to move and manage the world’s money. Min fees. Max ease. Full speed.",
-      "button": "Learn more"
+      "title": "Why Open an Online Bank Account with FlowPay?"
 
     },
     "part2": {
-      "title": "Effortless Money Transactions Anytime",
-      "subTitle": "FlowPay simplifies online money transactions with speed, security, and convenience. Whether you’re managing bills, transferring funds, or tracking payments, FlowPay ensures a seamless and user-friendly experience across all devices.\n\n"
+      "title1": "Open your account and activate your digital wallet now.",
+      "subTitle1": "Enjoy simple and secure financial management with borderless payments and innovative services at your fingertips.",
+      "title2": "Account opening and money management 100% online.",
+      "subTitle2": "It's better when it's simple!",
+      "title3": "It's better when it's simple!",
+      "subTitle3": "Free instant transfers, virtual cards for secure shopping, and more."
     },
     "partenaire": {
       "title": "Pay your bill online without leaving home and in a secure manner",
@@ -30,14 +44,17 @@
     }
   },
   "agentfeatures": {
-    "title": "Open Your Account with Our Agent: Simple and Fast",
-    "subTitle": "Our agent will guide you through the entire account creation process, ensuring a smooth and efficient experience. Whether you’re at home or on the go, you can easily provide the necessary documents and complete the process without visiting a bank branch."
-  },
-  "contact": {
-    "title": "DO YOU HAVE ANY QUESTIONS?",
-    "phone": "CALL US",
-    "email": "SEND US AN EMAIL",
-    "map": "FIND US"
+    "title": "How to open an online bank account with FlowPay?",
+    "title1": "Need help opening an account?",
+    "subTitle1": "Contact an agent now and quickly access the FlowPay app to manage your finances with ease.",
+    "title2": "Need help opening a bank account?",
+    "subTitle2": "Contact an agent now and open your bank account with us quickly and easily.",
+    "title3": "Immediate account activation.",
+    "subTitle3": "Agents have opened your bank account space. You can now start making purchases and transactions securely and easily.",
+    "button": "Contact our agents",
+    "title4": "A welcoming, available, and responsive Customer Service",
+    "subTitle4": "A 100% Morocco-based customer service, reachable from Monday to Saturday by phone, email, and chat.",
+    "link": "Contact us"
   },
   "loginForm": {
     "title": "Sign in to your account",
@@ -71,8 +88,8 @@
       "numberIdentityDocument": "N Identity document",
       "dateNaissance": "Date of birth",
       "address": "Address",
-      "CommercialRegisterRegistrationNumber": "Commercial register registration number",
-      "TaxIdentificationNumber": "Tax identification number",
+      "CommercialRegisterRegistrationNumber": "Commercial register registration number (optional)",
+      "TaxIdentificationNumber": "Tax identification number (optional)",
       "createClient": "Create",
       "back": "Back"
 
@@ -86,10 +103,10 @@
       "phone": "Phone number",
       "product": "Select a product",
       "account": {
-        "account1": "Hssab 1 - Limit : 20$",
-        "account2": "Hssab 2 - Limit : 1 000$",
-        "account3": "Hssab 3 - Limit : 1 500$",
-        "account4": "Hssab 4 - Limit : 2 000$"
+        "account1": "Hssab 1 - Limit : 200 MAD",
+        "account2": "Hssab 2 - Limit : 10 000 MAD",
+        "account3": "Hssab 3 - Limit : 15 000 MAD",
+        "account4": "Hssab 4 - Limit : 20 000 MAD"
       },
       "informationClient" :"Client Information",
       "openAccount":"Open an account"
@@ -102,7 +119,7 @@
     }
   },
   "LearMore": {
-    "title": "Learn More",
+    "title": "Find all the answers to your questions.",
     "wl": {
       "section1": {
         "title": "What is FlowPay ?",
@@ -134,6 +151,90 @@
       "help": "Help",
       "logout": "Sign out"
     }
+  },
+  "contact": {
+    "title": "Contact us !",
+    "acceuil": "Home",
+    "contact": "Contact",
+    "email": {
+      "titile": "E-mail",
+      "text": "Write to us with your inquiries or questions, and our advisors will respond via email."
+    },
+    "phone": {
+      "titile": "Phone",
+      "text": "Our advisors are available to answer all your questions."
+    },
+    "button": "Choose"
+  },
+  "consultAccount": {
+    "fullName": "Full Name",
+    "email": "Email",
+    "phone": "Phone",
+    "AccountType": "Account Type",
+    "Cardbank": "Card Bank",
+    "tempororyCard": "Temporary Card",
+    "actions": "Actions",
+    "edit": "Edit",
+    "close": "close",
+    "Activated": "Activated",
+    "NotActivated": "Not Activated",
+    "title": "Manage Client",
+    "search": "search by email"
+
+  },
+  "cardTemp": {
+    "title": "Add a new temporary card for payments,transactions ... ",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "amount": "Amount",
+    "expireAt": "Expire At",
+    "button": "Add card"
+  },
+  "profileAgent": {
+    "title": "Manage Profile",
+    "overview": "Overview",
+    "changePassword": "Change Password",
+    "claim": "Claim",
+    "fullName": "Full Name",
+    "address": "Address",
+    "role": "Role",
+    "phone": "Phone",
+    "accountType": "Account Type",
+    "newPass": "New Password",
+    "confirmPass": "Confirm Password",
+    "claimMessage": "Enter your complaint here ",
+    "sendToadmin": "Send to admin"
+  },
+  "event": {
+    "loading": "In progress ...",
+    "emailExist": "Email exist, try to change it to pass a next step !",
+    "undefined": " undefined",
+    "locked": "Lock",
+    "unlocked": "Unlock"
+  },
+  "transactionsSes": {
+    "title": "Transfer your money with ease and security",
+    "miniTitle": "Zero effort, and FlowPay becomes your No. 1",
+    "p1": "Do you want to transfer all your recurring payments and direct debits from your main current account to your Fortuneo account? Just ask! We promise, it's simple!",
+    "p2": "An IBAN and an online signature are all it takes: we handle all the banking mobility procedures with your various organizations."
+  },
+  "client": {
+    "buttonTransactions": "Make a Transaction",
+    "options": {
+      "profile": "My Profile",
+      "payment": "Make a Payment",
+      "help": "Help",
+      "logout": "Log Out",
+      "cryptocurrencies": "Wallet"
+    }
+
+  },
+  "payment": {
+    "title": "Quick and Easy Payments",
+    "rechargeTitle": "Quick Recharge for Your Mobile",
+    "abonnementTitle": "Manage Your Data Subscriptions",
+    "billTitle": "Managing Your Water and Electricity Bills",
+    "donationsTitle": "Together Against AIDS: How Your Donation Can Save Lives"
   }
 
 

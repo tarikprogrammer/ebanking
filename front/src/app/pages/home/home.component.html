@@ -1,5 +1,5 @@
-<div class="flex flex-col gap-20 relative">
-  <div class="sticky top-2 z-[1]">
+<div class="flex flex-col relative  ">
+  <div class="sticky top-0 z-[1]">
     <app-nav></app-nav>
   </div>
   @if (this.comm.addClient){
@@ -10,27 +10,35 @@
     <app-consult-account></app-consult-account>
   }
   @else {
-    <div class="mt-14" id="header">
+    <div  id="header" class="bg-gradient-to-br from-white  to-teal-50">
       <app-hearder></app-hearder>
     </div>
-    <div class="mt-14" id="feature">
+    <div  id="feature" class="bg-gradient-to-br from-white  to-teal-50 pb-5">
       <app-feauture></app-feauture>
     </div>
-
-    <div class="mt-14" id="featureList">
+    <div  id="featureList" >
       <app-factures-lits></app-factures-lits>
     </div>
-    <div class="mt-14" id="agent">
+    <div  id="transactionsSec" >
+     <app-transactions-sec></app-transactions-sec>
+    </div>
+
+    <div  id="agent">
       <app-agent></app-agent>
     </div>
-    <div class="mt-14" id="contact">
-      <app-frequently-asked-questions></app-frequently-asked-questions>
-    </div>
-    <footer>
-      <app-footer></app-footer>
-    </footer>
+    <div>
+      <app-learn-more-for-wlc></app-learn-more-for-wlc>
+    </div>>
   }
-
+  <footer>
+    <app-footer></app-footer>
+  </footer>
 
 
 </div>
+
+
+
+
+
+

@@ -2,19 +2,12 @@
   <div class="sticky top-2 z-[1]">
     <app-nav></app-nav>
   </div>
-  @if(this.conn.editClient){
-    <div class="mt-1" >
-      <app-edit-client></app-edit-client>
-    </div>
-  }
-  @if(this.conn.reviewClient){
-    <div class="mt-1" >
-      <app-review></app-review>
-    </div>
-  }
-  @if(this.conn.addTemporaryCrad){
-    <div class="mt-1" >
-      <app-temporary-card></app-temporary-card>
-    </div>
-  }
+
+  <div class="mt-1" >
+    <app-temporary-card></app-temporary-card>
+  </div>
+
+  <footer>
+    <app-footer></app-footer>
+  </footer>
 </div>

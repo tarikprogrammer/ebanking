@@ -15,4 +15,16 @@ module.exports = {
     require('daisyui'),
     require('flowbite/plugin')
   ],
+  daisyui: {
+    themes: [
+      {
+        mytheme: {
+          "primary":"#42bcec",
+          "info":"#1c4ed8"
+        },
+      },
+      "dark",
+      "cupcake",
+    ],
+  },
 }

@@ -178,6 +178,27 @@ public class ClientServiceImpl implements ClientService {
         return clientRepository.findByEmailAndPassword(email, password).orElseThrow(()->new EntityNotFoundException("email or password incorrect"));
     }
 
+    @Override
+    public boolean getClientByEmail(String email) {
+        return clientRepository.findByEmail(email).isPresent();
+    }
+
+    @Override
+    public Long getClientIdByEmail(String email) {
+        return clientRepository.findByEmail(email).get().getId();
+    }
+
+    @Override
+    public String getClientPhoneNumberByEmail(String email) {
+
+        return clientRepository.findByEmail(email).get().getPhone();
+    }
+
+    @Override
+    public String getClientNameByEmail(String email) {
+        return clientRepository.findByEmail(email).get().getLname();
+    }
+
     // generate a unique password
     private String generatePassword() {
         return "FlowPay2024" ;
@@ -187,4 +208,7 @@ public class ClientServiceImpl implements ClientService {
         Random random = new Random();
         return random.nextInt(0000,9999);
     }
+
+
+
 }

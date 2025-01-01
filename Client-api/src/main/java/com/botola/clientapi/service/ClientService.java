@@ -17,4 +17,8 @@ public interface ClientService {
     Page<Client> findAllClients(Pageable pageable,int page);
     Client changeVisibility(String email);
     Client login(String email, String password);
+    boolean getClientByEmail(String email);
+    Long getClientIdByEmail(String email);
+    String getClientPhoneNumberByEmail(String email);
+    String getClientNameByEmail(String email);
 }

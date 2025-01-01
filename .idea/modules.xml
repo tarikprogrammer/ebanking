@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/api-cmi/api-cmi.iml" filepath="$PROJECT_DIR$/api-cmi/api-cmi.iml" />
       <module fileurl="file://$PROJECT_DIR$/ebanking.iml" filepath="$PROJECT_DIR$/ebanking.iml" />
       <module fileurl="file://$PROJECT_DIR$/front.iml" filepath="$PROJECT_DIR$/front.iml" />
     </modules>

@@ -20,7 +20,6 @@ import java.nio.file.Paths;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
-@Transactional
 @Service
 @RequiredArgsConstructor
 public class ServiceAccount {
@@ -154,7 +153,7 @@ public class ServiceAccount {
             Account savedAccountDOLAR =accountRepository.save(accountDOLOAR);
 
 
-            Path path = Paths.get("/Users/tarik/Desktop/ebanking/api-cmi/src/main/resources/templates/accountOpening.html");
+            Path path = Paths.get("src/main/resources/templates/accountOpening.html");
 
             try {
                 String htmlContent = new String(Files.readAllBytes(path));

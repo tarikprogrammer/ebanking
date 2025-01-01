@@ -15,17 +15,17 @@ public class AgentapiApplication {
         SpringApplication.run(AgentapiApplication.class, args);
     }
 
-    @Bean
-    CommandLineRunner init(AgentRepository agentRepository) {
-        return args -> {
-            Agent agent =Agent.builder()
-                    .name("tarik belaid")
-                    .phone("0777871239")
-                    .email("belaid.tarikk@gmail.com")
-                    .password("agent")
-                    .build();
-
-            agentRepository.save(agent);
-        };
-    }
+//    @Bean
+//    CommandLineRunner init(AgentRepository agentRepository) {
+//        return args -> {
+//            Agent agent =Agent.builder()
+//                    .name("tarik belaid")
+//                    .phone("0777871239")
+//                    .email("belaid.tarikk@gmail.com")
+//                    .password("agent")
+//                    .build();
+//
+//            agentRepository.save(agent);
+//        };
+//    }
 }

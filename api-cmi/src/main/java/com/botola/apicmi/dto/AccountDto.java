@@ -8,7 +8,6 @@ import lombok.*;
 @Getter
 @Setter
 @Builder
-@Data
 public class AccountDto {
     private Long id;
 

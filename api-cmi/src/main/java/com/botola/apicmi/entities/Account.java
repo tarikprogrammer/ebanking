@@ -7,10 +7,10 @@ import lombok.*;
 import java.util.List;
 
 @Entity
-@NoArgsConstructor
-@AllArgsConstructor
 @Getter
 @Setter
+@NoArgsConstructor
+@AllArgsConstructor
 @Builder
 public class Account {
     @Id
@@ -30,9 +30,5 @@ public class Account {
 
     private String expireAt;
     private String device;
-//    @PrePersist
-//    public void generateReference(){
-//        this.iban= GeneratedRef.generateRef();
-//    }
 
 }

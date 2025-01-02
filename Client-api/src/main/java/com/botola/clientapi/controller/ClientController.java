@@ -94,6 +94,31 @@ public class ClientController {
     }
 
 
+    @GetMapping("/client/get/{email}")
+    public ResponseEntity<?> getClientByEmail(@PathVariable String email) {
+        return ResponseEntity.ok(clientService.getClientByEmail(email));
+    }
+
+
+    @GetMapping("/client/getClient/{email}")
+    public ResponseEntity<?> getClientById(@PathVariable String email) {
+        return ResponseEntity.ok(clientService.getClientIdByEmail(email));
+    }
+
+    @GetMapping("/client/getclientPhone/{email}")
+    public ResponseEntity<?> getClientPhoneByEmail(@PathVariable String email) {
+        return ResponseEntity.ok(clientService.getClientPhoneNumberByEmail(email));
+    }
+
+
+    @GetMapping("/client/getclientName/{email}")
+    public ResponseEntity<?> getClientNameByEmail(@PathVariable String email) {
+        return ResponseEntity.ok(clientService.getClientNameByEmail(email));
+    }
+
+
+
+
 
 
 

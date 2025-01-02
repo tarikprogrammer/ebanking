@@ -17,17 +17,22 @@ public class Account {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    private String accountName;
+    private double plafond ;
     private double solde;
 
-    private int plafond ;
     @Column(nullable = false)
     private String iban;
     @Column(name = "client_id", nullable = false)
     private Long clientId;
 
-    @PrePersist
-    public void generateReference(){
-        this.iban= GeneratedRef.generateRef();
-    }
+    private String cvv;
+
+    private String expireAt;
+    private String device;
+//    @PrePersist
+//    public void generateReference(){
+//        this.iban= GeneratedRef.generateRef();
+//    }
 
 }

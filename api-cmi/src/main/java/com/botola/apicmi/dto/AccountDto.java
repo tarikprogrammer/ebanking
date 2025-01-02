@@ -11,31 +11,47 @@ import lombok.*;
 @Data
 public class AccountDto {
     private Long id;
-    private int plafond;
+
     private double solde;
+
+    private double plafond ;
+
     private String iban;
+
     private Long clientId;
+
+    private String cvv;
+
+    private String expireAt;
+
+    private String device;
+    private String accountName;
 
 
     // Convert Account entity to AccountDto
     public static AccountDto toDto(Account account) {
         return AccountDto.builder()
                 .id(account.getId())
-                .plafond(account.getPlafond())
                 .solde(account.getSolde())
+                .plafond(account.getPlafond())
                 .iban(account.getIban())
-                .clientId(account.getClientId())
+                .cvv(account.getCvv())
+                .expireAt(account.getExpireAt())
+                .device(account.getDevice())
+                .accountName(account.getAccountName())
                 .build();
     }
 
     // Convert AccountDto to Account entity
     public static Account toAccount(AccountDto accountDto) {
         return Account.builder()
-                .id(accountDto.getId())
-                .plafond(accountDto.getPlafond())
                 .solde(accountDto.getSolde())
+                .plafond(accountDto.getPlafond())
                 .iban(accountDto.getIban())
-                .clientId(accountDto.getClientId())
+                .cvv(accountDto.getCvv())
+                .expireAt(accountDto.getExpireAt())
+                .device(accountDto.getDevice())
+                .accountName(accountDto.getAccountName())
                 .build();
     }
 }

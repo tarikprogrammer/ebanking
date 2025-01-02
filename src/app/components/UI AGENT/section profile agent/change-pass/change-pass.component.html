@@ -1,0 +1,21 @@
+<div class="w-[80%] mx-auto relative">
+  <form class="grid grid-cols-1 gap-8 w-full" [formGroup]="form">
+    <div class="grid grid-cols-1 gap-2">
+      <label class="font-medium text-gray-500">{{'profileAgent.newPass' | translate}}</label>
+      <input formControlName="password" type="password" class="border rounded-[5px] w-[80%] h-9 border-gray-400 " >
+    </div>
+    <div class="grid grid-cols-1 gap-2">
+      <label class="font-medium text-gray-500">{{'profileAgent.confirmPass' | translate}}</label>
+      <input  formControlName="confirmPassword" type="password" class="border rounded-[5px] w-[80%] h-9 border-gray-400 ">
+    </div>
+    <div class="flex items-center justify-between w-[80%]">
+      <button (click)="updatePasswordAgent()" class="btn btn-info   ">{{'profileAgent.changePassword' | translate}}</button>
+      @if(this.showSuccess){
+        <p class="text-success text-[18px] font-medium ">updated successfully</p>
+      }
+      @if(this.showError){
+        <p class="text-error text-[18px] font-medium ">error,try again </p>
+      }
+    </div>
+  </form>
+</div>

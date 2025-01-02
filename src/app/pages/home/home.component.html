@@ -1,0 +1,44 @@
+<div class="flex flex-col relative  ">
+  <div class="sticky top-0 z-[1]">
+    <app-nav></app-nav>
+  </div>
+  @if (this.comm.addClient){
+    <app-add-new-client></app-add-new-client>
+  } @else if (this.comm.openAccount){
+    <app-souscriptions></app-souscriptions>
+  } @else if (this.comm.manageAccount){
+    <app-consult-account></app-consult-account>
+  }
+  @else {
+    <div  id="header" class="bg-gradient-to-br from-white  to-teal-50">
+      <app-hearder></app-hearder>
+    </div>
+    <div  id="feature" class="bg-gradient-to-br from-white  to-teal-50 pb-5">
+      <app-feauture></app-feauture>
+    </div>
+    <div  id="featureList" >
+      <app-factures-lits></app-factures-lits>
+    </div>
+    <div  id="transactionsSec" >
+     <app-transactions-sec></app-transactions-sec>
+    </div>
+
+    <div  id="agent">
+      <app-agent></app-agent>
+    </div>
+    <div>
+      <app-learn-more-for-wlc></app-learn-more-for-wlc>
+    </div>>
+  }
+  <footer>
+    <app-footer></app-footer>
+  </footer>
+
+
+</div>
+
+
+
+
+
+

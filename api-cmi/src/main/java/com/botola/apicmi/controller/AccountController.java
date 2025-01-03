@@ -31,25 +31,23 @@ public class AccountController {
     }
 
     @PostMapping("/rechargeAccount/{accountId}")
-    public ResponseEntity<String> rechargeAccount(@PathVariable Long accountId, @RequestBody Map<String, Double> request) {
+    public ResponseEntity<Boolean> rechargeAccount(@PathVariable Long accountId, @RequestBody Map<String, Double> request) {
         Double amount = request.get("amount");
         if (amount == null || amount <= 0) {
-            return ResponseEntity.badRequest().body("Invalid amount provided.");
+            return ResponseEntity.badRequest().body(false); // Invalid input
         }
         boolean success = accountService.rechargeAccount(accountId, amount);
-        return success ? ResponseEntity.ok("Account recharged successfully.") :
-                ResponseEntity.badRequest().body("Recharge failed. Check account details or plafond.");
+        return ResponseEntity.ok(success); // True if successful, False otherwise
     }
 
     @PostMapping("/retrieveFromAccount/{accountId}")
-    public ResponseEntity<String> retrieveFromAccount(@PathVariable Long accountId, @RequestBody Map<String, Double> request) {
+    public ResponseEntity<Boolean> retrieveFromAccount(@PathVariable Long accountId, @RequestBody Map<String, Double> request) {
         Double amount = request.get("amount");
         if (amount == null || amount <= 0) {
-            return ResponseEntity.badRequest().body("Invalid amount provided.");
+            return ResponseEntity.badRequest().body(false); // Invalid input
         }
         boolean success = accountService.retrieveFromAccount(accountId, amount);
-        return success ? ResponseEntity.ok("Amount retrieved successfully.") :
-                ResponseEntity.badRequest().body("Retrieve failed. Check account balance.");
+        return ResponseEntity.ok(success); // True if successful, False otherwise
     }
 
     @GetMapping("/Device/{accountId}")

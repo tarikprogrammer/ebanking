@@ -284,39 +284,32 @@ public class ServiceAccount {
     }
 
 
-    public boolean rechargeAccount(Long accountId, double amount) {
-        Optional<Account> accountOpt = accountRepository.findById(accountId);
-        if (accountOpt.isPresent() && amount > 0) {
-            Account account = accountOpt.get();
-            double newBalance = account.getSolde() + amount;
-
-            // Check if the new balance exceeds the plafond
-            if (newBalance <= account.getPlafond()) {
-                account.setSolde(newBalance);
-                accountRepository.save(account);
-                return true;
-            } else {
-                throw new IllegalArgumentException("Recharge amount exceeds account plafond.");
+    public boolean rechargeAccount(Long accountId, Double amount) {
+        Optional<Account> optionalAccount = accountRepository.findById(accountId);
+        if (optionalAccount.isPresent()) {
+            Account account = optionalAccount.get();
+            if (account.getSolde() + amount > account.getPlafond()) {
+                return false; // Exceeds plafond
             }
+            account.setSolde(account.getSolde() + amount);
+            accountRepository.save(account);
+            return true;
         }
-        throw new IllegalArgumentException("Invalid account or amount.");
+        return false; // Account not found
     }
 
-    public boolean retrieveFromAccount(Long accountId, double amount) {
-        Optional<Account> accountOpt = accountRepository.findById(accountId);
-        if (accountOpt.isPresent() && amount > 0) {
-            Account account = accountOpt.get();
-
-            // Check if the account has enough balance
-            if (account.getSolde() >= amount) {
-                account.setSolde(account.getSolde() - amount);
-                accountRepository.save(account);
-                return true;
-            } else {
-                throw new IllegalArgumentException("Insufficient balance.");
+    public boolean retrieveFromAccount(Long accountId, Double amount) {
+        Optional<Account> optionalAccount = accountRepository.findById(accountId);
+        if (optionalAccount.isPresent()) {
+            Account account = optionalAccount.get();
+            if (account.getSolde() < amount) {
+                return false; // Insufficient funds
             }
+            account.setSolde(account.getSolde() - amount);
+            accountRepository.save(account);
+            return true;
         }
-        throw new IllegalArgumentException("Invalid account or amount.");
+        return false; // Account not found
     }
 
     public String checkAccountDevice(Long accountId) {

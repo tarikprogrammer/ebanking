@@ -317,5 +317,10 @@ public class ServiceAccount {
         return accountOpt.map(Account::getDevice).orElse(null);
     }
 
+    public Double getPlafond(Long accountId) {
+        Optional<Account> optionalAccount = accountRepository.findById(accountId);
+        return optionalAccount.map(Account::getPlafond).orElse(null); // Returns null if account not found
+    }
+
 
 }

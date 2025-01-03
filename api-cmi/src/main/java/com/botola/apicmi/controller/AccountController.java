@@ -59,4 +59,14 @@ public class AccountController {
         return ResponseEntity.badRequest().body("Account not found.");
     }
 
+    @GetMapping("/getPlafond/{accountId}")
+    public ResponseEntity<Double> getPlafond(@PathVariable Long accountId) {
+        Double plafond = accountService.getPlafond(accountId);
+        if (plafond != null) {
+            return ResponseEntity.ok(plafond);
+        } else {
+            return ResponseEntity.notFound().build(); // Account not found
+        }
+    }
+
 }

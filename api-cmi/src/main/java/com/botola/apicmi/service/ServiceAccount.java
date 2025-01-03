@@ -283,4 +283,46 @@ public class ServiceAccount {
         return accountRepository.findByClientId(clientId);
     }
 
+
+    public boolean rechargeAccount(Long accountId, double amount) {
+        Optional<Account> accountOpt = accountRepository.findById(accountId);
+        if (accountOpt.isPresent() && amount > 0) {
+            Account account = accountOpt.get();
+            double newBalance = account.getSolde() + amount;
+
+            // Check if the new balance exceeds the plafond
+            if (newBalance <= account.getPlafond()) {
+                account.setSolde(newBalance);
+                accountRepository.save(account);
+                return true;
+            } else {
+                throw new IllegalArgumentException("Recharge amount exceeds account plafond.");
+            }
+        }
+        throw new IllegalArgumentException("Invalid account or amount.");
+    }
+
+    public boolean retrieveFromAccount(Long accountId, double amount) {
+        Optional<Account> accountOpt = accountRepository.findById(accountId);
+        if (accountOpt.isPresent() && amount > 0) {
+            Account account = accountOpt.get();
+
+            // Check if the account has enough balance
+            if (account.getSolde() >= amount) {
+                account.setSolde(account.getSolde() - amount);
+                accountRepository.save(account);
+                return true;
+            } else {
+                throw new IllegalArgumentException("Insufficient balance.");
+            }
+        }
+        throw new IllegalArgumentException("Invalid account or amount.");
+    }
+
+    public String checkAccountDevice(Long accountId) {
+        Optional<Account> accountOpt = accountRepository.findById(accountId);
+        return accountOpt.map(Account::getDevice).orElse(null);
+    }
+
+
 }

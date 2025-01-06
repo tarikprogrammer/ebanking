@@ -13,19 +13,9 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="false">
-          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/unknown/lombok-unknown.jar" />
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.30/lombok-1.18.30.jar" />
         </processorPath>
         <module name="api-cmi" />
-      </profile>
-      <profile name="Annotation profile for Client-api" enabled="true">
-        <sourceOutputDir name="target/generated-sources/annotations" />
-        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-        <processorPath useClasspath="false">
-          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.30/lombok-1.18.30.jar" />
-          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.30/lombok-1.18.30.jar" />
-        </processorPath>
         <module name="Client-api" />
         <module name="Agentapi" />
       </profile>
@@ -34,6 +24,7 @@
       <module name="agent-api" target="17" />
       <module name="api-agent" target="17" />
       <module name="api-client" target="17" />
+      <module name="service-discovery-eureka" target="17" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">

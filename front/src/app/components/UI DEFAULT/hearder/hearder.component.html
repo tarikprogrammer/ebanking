@@ -19,7 +19,7 @@
         @if(this.goToAgent){
           <button (click)="ajouterClient()"  class="btn btn-lg rounded-full px-20 mt-8 btn-primary" >{{'agent.account' | translate}}</button>
         } @else if (this.goToClient){
-          <button (click)="ajouterClient()"  class="btn btn-lg rounded-full px-20 mt-8 btn-primary" >{{'client.buttonTransactions' | translate}}</button>
+          <button (click)="transaction()"  class="btn btn-lg rounded-full px-20 mt-8 btn-primary" >{{'client.buttonTransactions' | translate}}</button>
         }
         @else {
           <button (click)="login()" class="btn btn-lg rounded-full px-20 mt-8 btn-primary">

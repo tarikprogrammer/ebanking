@@ -48,4 +48,7 @@ export class HearderComponent {
     this.frg=fragment;
   }
 
+  transaction() {
+    this.router.navigateByUrl("client/transaction")
+  }
 }

@@ -10,8 +10,8 @@
     </div>
     <div>
       <h1 class="font-medium text-xl mb-2 text-info">{{'profileAgent.accountType' | translate}} :</h1>
-      @if(this.clientData.account){
-        <p>{{this.clientData.account.accountName}}</p>
+      @if(this.clientData.accountDtoList[0]){
+        <p>{{this.clientData.accountDtoList[0].accountName}}</p>
       }@else{
         <p>undefined</p>
       }
@@ -24,11 +24,11 @@
     </div>
     <div>
       <h1 class="font-medium text-xl mb-2 text-info">{{'profileAgent.address' | translate}} :</h1>
-      <p>undefined</p>
+      <p>{{this.clientData.address}}</p>
     </div>
     <div>
       <h1 class="font-medium text-xl mb-2 text-info">{{'profileAgent.phone' | translate}} :</h1>
-      <p>{{'+'+this.clientData?.phone}}</p>
+      <p>{{0+this.clientData?.phone}}</p>
     </div>
   </div>
 </div>

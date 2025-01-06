@@ -32,6 +32,7 @@ export class ConsultAccountComponent implements OnInit{
         this.numbers = Array(this.pageTotal ).fill(0).map((x,i)=>i);
       }
     })
+
   }
 
   ngOnInit() {
@@ -81,5 +82,10 @@ export class ConsultAccountComponent implements OnInit{
         this.rouuter.navigateByUrl("");
       }
     })
+  }
+
+  getData(item: any) {
+    this.clientservice.currentClient = item;
+    this.rouuter.navigateByUrl("card")
   }
 }

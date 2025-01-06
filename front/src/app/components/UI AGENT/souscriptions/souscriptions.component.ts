@@ -15,26 +15,26 @@ import {FormBuilder, FormGroup, ReactiveFormsModule} from "@angular/forms";
 })
 export class SouscriptionsComponent implements OnInit{
 
-  client!:FormGroup;
+  account!:FormGroup;
   responseExist:boolean =false;
   constructor(private clientservice:ClientService,private fb:FormBuilder) {
   }
   ngOnInit(): void {
 
-    this.client = this.fb.group({
+    this.account = this.fb.group({
       fname: [''],
       lname: [''],
       email: [''],
       phone: [''],
-      accountType:['Hssab1']
+      accountName:['Hssab1']
     })
   }
 
   openAccount() {
     this.responseExist = true;
-
-    this.clientservice.openAccountByAgent(this.client,this.client.get('accountType')?.value).subscribe(
+    this.clientservice.openAccountByAgent(this.account,this.account.get('email')?.value).subscribe(
       {
+
         next:(respnse:any)=>{
           this.responseExist = false;
          if(respnse == true){

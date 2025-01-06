@@ -2,14 +2,14 @@
   <div class="w-full h-[200px] grid grid-cols-1 gap-4 bg-[#43923d] rounded-xl p-6">
     <div class="flex items-center justify-between">
       <h1 class="text-white font-medium ">MAD</h1>
-      <h1 class="text-white text-[13px] font-medium flex items-center justify-center text-xl w-[30px] h-[30px]  border rounded-full border-white p-1">DH</h1>
+      <h1 class="text-white text-[13px] font-medium flex items-center justify-center  w-[30px] h-[30px]  border rounded-full border-white p-1">DH</h1>
     </div>
     <div class="w-full ">
-      <h1 class="text-center text-xl font-medium text-white text-opacity-[0.8]">{{1000 | currency:'DH ':true}}</h1>
+      <h1 class="text-center text-xl font-medium text-white text-opacity-[0.8]">{{accounts[0].solde | currency:'DH ':true}}</h1>
     </div>
-    <div class=" w-full flex items-center justify-end gap-4">
-      <button class="btn btn-sm btn-outline text-white">Depôt</button>
-      <button class="btn btn-sm btn-outline text-white">Retrait</button>
+    <div class=" w-full flex items-center justify-between">
+      <button (click)="showProcessDepot(clientData.accountDtoList[0].iban)" class="btn w-[45%] btn-sm btn-outline text-white">Depôt</button>
+      <button (click)="showProcess(clientData.accountDtoList[0].iban)" class="btn w-[45%] btn-sm btn-outline text-white">Retrait</button>
     </div>
   </div>
   <div class="w-full h-[200px] grid grid-cols-1 gap-4 p-4 bg-[#fa9066] rounded-xl">
@@ -18,11 +18,11 @@
       <h1 class="text-white text-[14px] font-medium flex items-center justify-center text-xl w-[30px] h-[30px]  border rounded-full border-white p-1">$</h1>
     </div>
     <div class="w-full ">
-      <h1 class="text-center text-xl font-medium text-white text-opacity-[0.8]">{{0 | currency:'$ ':true}}</h1>
+      <h1 class="text-center text-xl font-medium text-white text-opacity-[0.8]">{{accounts[1].solde| currency:'$ ':true}}</h1>
     </div>
-    <div class=" w-full flex items-center justify-end gap-4">
-      <button class="btn btn-sm btn-outline text-white">Depôt</button>
-      <button class="btn btn-sm btn-outline text-white">Retrait</button>
+    <div class=" w-full flex items-center justify-between">
+      <button (click)="showProcessDepot(clientData.accountDtoList[1].iban)" class="btn w-[45%] btn-sm btn-outline text-white">Depôt</button>
+      <button (click)="showProcess(clientData.accountDtoList[1].iban)" class="btn w-[45%] btn-sm btn-outline text-white">Retrait</button>
     </div>
   </div>
   <div class="w-full h-[200px] bg-[#086b9b] rounded-xl p-4 grid grid-cols-1 gap-4 ">
@@ -31,24 +31,12 @@
       <h1 class="text-white text-[14px] font-medium flex items-center justify-center text-xl w-[30px] h-[30px]  border rounded-full border-white p-1">€</h1>
     </div>
     <div class="w-full ">
-      <h1 class="text-center text-xl font-medium text-white text-opacity-[0.8]">{{0 | currency:'€ ':true}}</h1>
+      <h1 class="text-center text-xl font-medium text-white text-opacity-[0.8]">{{accounts[2].solde | currency:'€ ':true}}</h1>
     </div>
-    <div class=" w-full flex items-center justify-end gap-4">
-      <button class="btn btn-sm btn-outline text-white">Depôt</button>
-      <button class="btn btn-sm btn-outline text-white">Retrait</button>
-    </div>
-  </div>
-  <div class="w-full h-[200px] bg-[#ad5605] rounded-xl  p-4 grid grid-cols-1 gap-4 ">
-    <div class="flex items-center justify-between">
-      <h1 class="text-white font-medium ">RUB</h1>
-      <h1 class="text-white text-[14px] font-medium flex items-center justify-center text-xl w-[30px] h-[30px]  border rounded-full border-white p-1">₽</h1>
-    </div>
-    <div class="w-full ">
-      <h1 class="text-center text-xl font-medium text-white text-opacity-[0.8]">{{0 | currency:'₽ ':true}}</h1>
-    </div>
-    <div class=" w-full flex items-center justify-end gap-4">
-      <button class="btn btn-sm btn-outline text-white">Depôt</button>
-      <button class="btn btn-sm btn-outline text-white">Retrait</button>
+    <div class=" w-full flex items-center justify-between">
+      <button (click)="showProcessDepot(clientData.accountDtoList[2].iban)" class="btn w-[45%] btn-sm btn-outline text-white">Depôt</button>
+      <button (click)="showProcess(clientData.accountDtoList[2].iban)" class="btn w-[45%] btn-sm btn-outline text-white">Retrait</button>
     </div>
   </div>
+
 </div>

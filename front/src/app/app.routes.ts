@@ -23,6 +23,15 @@ import {PaiementPageComponent} from "./pages/paiement-page/paiement-page.compone
 import {PortfeuillePageComponent} from "./pages/portfeuille-page/portfeuille-page.component";
 import {TousComptesComponent} from "./components/UI CLIENT/tous-comptes/tous-comptes.component";
 import {CryptoComponent} from "./components/UI CLIENT/crypto/crypto.component";
+import {RechargePaiementPageComponent} from "./pages/recharge-paiement-page/recharge-paiement-page.component";
+import {PayerFacturePageComponent} from "./pages/payer-facture-page/payer-facture-page.component";
+import {FactureDetailsPageComponent} from "./pages/facture-details-page/facture-details-page.component";
+import {
+  PayerFactureSuivantPageComponent
+} from "./pages/payer-facture-suivant-page/payer-facture-suivant-page.component";
+import {DonationPageComponent} from "./pages/donation-page/donation-page.component";
+import {TransactionPageComponent} from "./pages/transaction-page/transaction-page.component";
+import {CryptomoniesComponent} from "./components/UI CLIENT/cryptomonies/cryptomonies.component";
 
 export const routes: Routes = [
   {path:'',component:HomeComponent},
@@ -48,8 +57,18 @@ export const routes: Routes = [
   {path:"client/paiement",component:PaiementPageComponent},
   {path:"client/portefeuille",component:PortfeuillePageComponent,children:[
       {path:"allcompte",component: TousComptesComponent},
-      {path:"crypto",component: CryptoComponent},
+      {path:"card",component: CryptoComponent},
+      {path:"crypto",component: CryptomoniesComponent},
+
     ]},
+
+  {path:"client/recharges",component:RechargePaiementPageComponent},
+  {path:"client/payerFacture",component:PayerFacturePageComponent},
+  {path:"client/payerFacture/details",component:FactureDetailsPageComponent},
+  {path:"client/payerFacture/details/finish",component:PayerFactureSuivantPageComponent},
+  {path:"client/helpOthers",component:DonationPageComponent},
+  {path:"client/transaction",component:TransactionPageComponent},
+
   {path:"**",redirectTo:"",pathMatch:"full"}
 
 ];

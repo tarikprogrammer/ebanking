@@ -210,7 +210,8 @@
     "emailExist": "Email exist, try to change it to pass a next step !",
     "undefined": " undefined",
     "locked": "Lock",
-    "unlocked": "Unlock"
+    "unlocked": "Unlock",
+    "cancel": "Cancel"
   },
   "transactionsSes": {
     "title": "Transfer your money with ease and security",
@@ -235,7 +236,43 @@
     "abonnementTitle": "Manage Your Data Subscriptions",
     "billTitle": "Managing Your Water and Electricity Bills",
     "donationsTitle": "Together Against AIDS: How Your Donation Can Save Lives"
+  },
+  "compte": {
+    "accountMAD": "Bank Account (MAD)",
+    "accountEUR": "Bank Account (EUR)",
+    "accountUSD": "Bank Account (USD)",
+    "accountChoose": "Choose a bank account",
+    "lab": "Choose an account"
+  },
+  "recharge": {
+    "montant": "Amount",
+    "rechageType": "Recharge Type",
+    "outilPaiement": "Pay with",
+    "compteBancaire": "Bank Account",
+    "carteVirtuelle": "Virtual Card",
+    "choisir": "Choose an account",
+    "phone": "Phone Number",
+    "button": "Submit"
+  },
+  "facture": {
+    "codeFacture": "Invoice Code"
+  },
+  "donation": {
+    "title": "Together Against the",
+    "solde": "donation"
+  },
+  "transaction": {
+    "title": "Send Your Money",
+    "securise": "secured",
+    "facile": "easily",
+    "solde": "Amount",
+    "sendTo": "Sent To"
+  },
+  "wallet": {
+    "title": "Multi-account Wallet",
+    "account": "ALL ACCOUNTS",
+    "card": "ALL VIRTUAL CARDS",
+    "crypto": "ALL CRYPTOCURRENCIES"
   }
-
 
 }

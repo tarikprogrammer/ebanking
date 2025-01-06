@@ -207,7 +207,8 @@
     "emailExist": "Email existant, essayez de le changer pour passer à l’étape suivante !",
     "undefined": "Non défini",
     "locked": "Verrouiller",
-    "unlocked": "Déverrouiller"
+    "unlocked": "Déverrouiller",
+    "cancel": "Annuler"
   },
   "transactionsSes": {
     "titre": "Transférez votre argent en toute simplicité et en toute sécurité",
@@ -231,5 +232,46 @@
     "abonnementTitle": "Gérez Vos Abonnements de Données",
     "billTitle": "Gestion de Vos Factures d'Eau et d'Électricité",
     "donationsTitle": "Ensemble Contre le VIH/SIDA : Comment Votre Don Peut Sauver des Vies"
+  },
+  "compte": {
+    "accountMAD": "Compte Bancaire (MAD)",
+    "accountEUR": "Compte Bancaire (EUR)",
+    "accountUSD": "Compte Bancaire (USD)",
+    "accountChoose": "Choisir le compte bancaire",
+    "lab": "Choix du compte"
+  },
+  "recharge": {
+    "montant": "Montant",
+    "rechageType": "Type de Recharge",
+    "outilPaiement": "Payer avec",
+    "compteBancaire": "Compte Bancaire",
+    "carteVirtuelle": "Carte Virtuelle",
+    "choisir": "Choisir un compte",
+    "phone": "Numero de Télephone",
+    "button": "Valider"
+
+  },
+  "facture": {
+    "codeFacture": "Code Facture"
+  },
+  "donation": {
+    "title": "Ensemble Contre le",
+    "solde": "donation"
+  },
+  "transaction": {
+    "title": "Envoyer votre Argent ",
+    "securise": "sécurisé",
+     "facile": "facilement",
+    "solde": "Combien",
+    "sendTo": "Envoyé à"
+
+  },
+  "portefeuille": {
+    "title": "Portefeuille multi-comptes",
+    "compte": "TOUS LES COMPTES",
+    "card": "TOUTES LES CARTES VIRTUELLES",
+    "crypto": "TOUTES LES CRYPTOMONNAIES"
   }
+
+
 }

@@ -1,15 +1,18 @@
 <div class="w-[90%] mx-auto">
-  <h1 class="font-medium text-[#232323] text-4xl mt-20">Portefeuille multi-compte</h1>
+  <h1 class="font-medium text-[#232323] text-4xl mt-20">{{'portefeuille.title' | translate}}</h1>
 
   <div class="mt-20 border w-full  rounded-xl bg-gray-50 p-1">
      <div class="border border-gray-300  pb-10 w-full overflow-hidden h-full rounded-xl">
         <div class="w-full h-12 bg-gray-300">
            <ul class="flex items-center h-full ">
              <li routerLink="allcompte" routerLinkActive="bg-black text-white" [routerLinkActiveOptions]="{exact: true}" class="h-full    flex items-center justify-center px-20">
-               <button   class="">TOUS LES COMPTES</button>
+               <button   class="">{{'portefeuille.compte' | translate}}</button>
+             </li>
+             <li routerLink="card" routerLinkActive="bg-black text-white" class="h-full px-20 flex items-center justify-center">
+               <button class="uppercase">{{'portefeuille.card' | translate}}</button>
              </li>
              <li routerLink="crypto" routerLinkActive="bg-black text-white" class="h-full px-20 flex items-center justify-center">
-               <button class="uppercase">cryptomonnaies</button>
+               <button class="uppercase">{{'portefeuille.crypto' | translate}}</button>
              </li>
            </ul>
         </div>

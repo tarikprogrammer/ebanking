@@ -1,0 +1,64 @@
+<div class="p-10 w-[50%] mx-auto rounded-xl border border-gray-300 mt-20">
+  <form class="w-full "  [formGroup]="form">
+    <div class="flex flex-wrap -mx-3 mb-6">
+
+      <div class="w-full px-3">
+        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
+          {{'recharge.choisir' | translate}}
+        </label>
+        <select formControlName="choixCompte"  class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder:text-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500" required>
+          <option value="compte bancaire" [selected]="true">{{'recharge.compteBancaire' | translate}}</option>
+          <option value="carte virtuelle">{{'recharge.carteVirtuelle' | translate}}</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- compte bancaire-->
+
+    @if(this.form.get('choixCompte')?.value == "compte bancaire"){
+      <div class="flex flex-wrap -mx-3 mb-6">
+        <!-- Mode de paiement -->
+        <div class="w-full px-3">
+          <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
+            {{'recharge.outilPaiement' | translate}}
+          </label>
+          <select  formControlName="rib"  class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder:text-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500" required>
+            <option value="main" [selected]="true">Choisir la carte bancaire</option>
+            @if(clientData.accountDtoList){
+              @for(rib of clientData.accountDtoList.slice(0, 3);track rib){
+                <option [value]="rib.iban">💳 {{rib.iban.substring(0, 10)+'*****************' + ' '+rib.device}}</option>
+              }
+            }
+          </select>
+        </div>
+      </div>
+    } @else {
+      <div class="flex flex-wrap -mx-3 mb-6">
+        <!-- Mode de paiement -->
+        <div class="w-full px-3">
+          <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
+            {{'recharge.outilPaiement' | translate}}
+          </label>
+          <select formControlName="rib" class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder:text-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500" required>
+            <option value="main" [selected]="true">Choisir la carte virtuelle</option>
+            @if(clientData.tempraryCardDtos){
+              @for(rib of clientData.tempraryCardDtos;track rib){
+                <option [value]="rib.iban">💳 {{rib.iban.substring(0, 10)+'*****************'}}</option>
+              } @empty {
+                <option>No Temporary card</option>
+              }
+            }
+          </select>
+        </div>
+      </div>
+    }
+    <button (click)="payer()"  class="btn btn-info w-full mt-10">
+      @if(this.responseExist){
+        {{'event.loading' | translate}}
+      } @else {
+        {{'recharge.button' | translate}}
+      }
+    </button>
+  </form>
+
+</div>

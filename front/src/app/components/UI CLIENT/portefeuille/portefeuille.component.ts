@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {RouterLink, RouterLinkActive, RouterOutlet} from "@angular/router";
+import {TranslatePipe} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-portefeuille',
@@ -7,7 +8,8 @@ import {RouterLink, RouterLinkActive, RouterOutlet} from "@angular/router";
   imports: [
     RouterOutlet,
     RouterLink,
-    RouterLinkActive
+    RouterLinkActive,
+    TranslatePipe
   ],
   templateUrl: './portefeuille.component.html',
   styleUrl: './portefeuille.component.css'

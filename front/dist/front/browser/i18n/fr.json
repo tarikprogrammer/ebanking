@@ -194,7 +194,7 @@
     "claim": "Réclamation",
     "fullName": "Nom complet",
     "address": "Adresse",
-    "role": "Agent",
+    "role": "Rôle",
     "phone": "Téléphone",
     "accountType": "Type de compte",
     "newPass": "Nouveau mot de passe",
@@ -205,6 +205,52 @@
   "event": {
     "loading": "en cours ...",
     "emailExist": "Email existant, essayez de le changer pour passer à l’étape suivante !",
-    "undefined": "Non défini"
+    "undefined": "Non défini",
+    "locked": "Verrouiller",
+    "unlocked": "Déverrouiller"
+  },
+  "transactionsSes": {
+    "titre": "Transférez votre argent en toute simplicité et en toute sécurité",
+    "miniTitre": "0 effort et FlowPay devient votre n°1",
+    "p1": "Vous souhaitez transférer tous vos virements et prélèvements récurrents de votre compte courant principal vers votre compte Fortuneo ? Vous n’avez qu’à demander ! Promis, c’est simple !",
+    "p2": "Un RIB et une signature en ligne suffisent : nous nous chargeons de toutes les démarches de mobilité bancaire auprès de vos différents organismes."
+  },
+  "client": {
+    "buttonTransactions": "Effectuer une Transaction",
+    "options": {
+      "profile": "Mon Profile",
+      "payment": "Effectuer un Paiement",
+      "help": "Aide",
+      "logout": "Se déconnecter",
+      "cryptocurrencies": "Portefeuille"
+    }
+  },
+  "payment": {
+    "title": "Paiements Rapides et Faciles",
+    "rechargeTitle": "Recharge Rapide pour Votre Mobile",
+    "abonnementTitle": "Gérez Vos Abonnements de Données",
+    "billTitle": "Gestion de Vos Factures d'Eau et d'Électricité",
+    "donationsTitle": "Ensemble Contre le VIH/SIDA : Comment Votre Don Peut Sauver des Vies"
+  },
+  "compte": {
+    "accountMAD": "Compte Bancaire (MAD)",
+    "accountEUR": "Compte Bancaire (EUR)",
+    "accountUSD": "Compte Bancaire (USD)",
+    "accountChoose": "Choisir le compte bancaire",
+    "lab": "Choix du compte"
+  },
+  "recharge": {
+    "montant": "Montant",
+    "rechageType": "Type de Recharge",
+    "outilPaiement": "Payer avec",
+    "compteBancaire": "Compte Bancaire",
+    "carteVirtuelle": "Carte Virtuelle",
+    "choisir": "Choisir un compte",
+    "phone": "Numero de Télephone",
+    "button": "Valider"
+
+  },
+  "facture": {
+    "codeFacture": "Code Facture"
   }
 }

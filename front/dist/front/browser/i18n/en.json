@@ -197,7 +197,7 @@
     "claim": "Claim",
     "fullName": "Full Name",
     "address": "Address",
-    "role": "Agent",
+    "role": "Role",
     "phone": "Phone",
     "accountType": "Account Type",
     "newPass": "New Password",
@@ -208,7 +208,50 @@
   "event": {
     "loading": "In progress ...",
     "emailExist": "Email exist, try to change it to pass a next step !",
-    "undefined": " undefined"
+    "undefined": " undefined",
+    "locked": "Lock",
+    "unlocked": "Unlock"
+  },
+  "transactionsSes": {
+    "title": "Transfer your money with ease and security",
+    "miniTitle": "Zero effort, and FlowPay becomes your No. 1",
+    "p1": "Do you want to transfer all your recurring payments and direct debits from your main current account to your Fortuneo account? Just ask! We promise, it's simple!",
+    "p2": "An IBAN and an online signature are all it takes: we handle all the banking mobility procedures with your various organizations."
+  },
+  "client": {
+    "buttonTransactions": "Make a Transaction",
+    "options": {
+      "profile": "My Profile",
+      "payment": "Make a Payment",
+      "help": "Help",
+      "logout": "Log Out",
+      "cryptocurrencies": "Wallet"
+    }
+
+  },
+  "payment": {
+    "title": "Quick and Easy Payments",
+    "rechargeTitle": "Quick Recharge for Your Mobile",
+    "abonnementTitle": "Manage Your Data Subscriptions",
+    "billTitle": "Managing Your Water and Electricity Bills",
+    "donationsTitle": "Together Against AIDS: How Your Donation Can Save Lives"
+  },
+  "compte": {
+    "accountMAD": "Bank Account (MAD)",
+    "accountEUR": "Bank Account (EUR)",
+    "accountUSD": "Bank Account (USD)",
+    "accountChoose": "Choose a bank account",
+    "lab": "Choose an account"
+  },
+  "recharge": {
+    "montant": "Amount",
+    "rechageType": "Recharge Type",
+    "outilPaiement": "Pay with",
+    "compteBancaire": "Bank Account",
+    "carteVirtuelle": "Virtual Card",
+    "choisir": "Choose an account",
+    "phone": "Phone Number",
+    "button": "Submit"
   }
 
 

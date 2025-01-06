@@ -79,12 +79,12 @@
                   <p class="text-sm text-slate-500">{{item.email}}</p>
                 </td>
                 <td class="p-4 py-5">
-                  <p class="text-sm text-slate-500">{{item.phone}}</p>
+                  <p class="text-sm text-slate-500">{{'+'+item.phone}}</p>
                 </td>
                 <td class="p-4 py-5">
                   <p class="text-sm text-slate-500">
-                    @if(item.account){
-                      {{item.account.accountName}}
+                    @if(item.accountDtoList[0]){
+                      {{item.accountDtoList[0].accountName}}
                     }@else{
                        {{'event.undefined' | translate}}
                     }
@@ -93,7 +93,7 @@
                 </td>
                 <td class="p-4 py-5">
                   <p class="text-sm text-slate-500">
-                     @if(item.account){
+                     @if(item.accountDtoList[0]){
                        <span class="badge badge-md badge-success text-white">
                           {{'consultAccount.Activated' | translate}}
                        </span>
@@ -110,7 +110,7 @@
                 </td>
                 <td class="p-4 py-5">
                   <div class="flex items-center gap-2 w-full" >
-                    <button routerLink="card"  class="btn btn-sm btn-active w-[50%]  rounded-full">{{'consultAccount.edit' | translate}}</button>
+                    <button  (click)="getData(item)"  class="btn btn-sm btn-active w-[50%]  rounded-full">{{'consultAccount.edit' | translate}}</button>
                     @if (!item.locked){
                       <button (click)="changeVisibility(item.email)"   class="btn btn-sm btn-outline btn-info text-white w-[50%]   rounded-full">{{'event.locked' | translate}}</button>
                     }@else{

@@ -25,8 +25,10 @@ public class Transaction {
     private String ribSender;
     private String ribReceiver;
     private Double amount;
-    private String currency;
+    private String senderCurrency;
+    private String receiverCurrency;
+
     private LocalDateTime transactionDate;
-    private TransactionStatus status;
-    private String transactionNumber;
+    private boolean status;
+
 }

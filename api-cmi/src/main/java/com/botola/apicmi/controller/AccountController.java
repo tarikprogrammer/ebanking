@@ -8,6 +8,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Map;
+
 @RestController
 @CrossOrigin("*")
 @RequestMapping("/api/accounts")
@@ -84,6 +86,53 @@ public class AccountController {
     public ResponseEntity<?> transaction(@RequestBody TransactionRequestDto transactionRequestDto) {
         return ResponseEntity.ok(transactionService.createTransaction(transactionRequestDto));
     }
+
+
+
+
+    @GetMapping("/getClientID/crypto/{clientId}")
+    public ResponseEntity<?> getAccountInfosCrypto(@PathVariable Long clientId) {
+        return ResponseEntity.ok(accountService.getCryptoAccounts(clientId));
+    }
+
+    @GetMapping("/getClientID/normal/{clientId}")
+    public ResponseEntity<?> getAccountInfosNormal(@PathVariable Long clientId) {
+        return ResponseEntity.ok(accountService.getNonCryptoAccounts(clientId));
+    }
+    @PostMapping("/rechargeAccount/{iban}")
+    public ResponseEntity<Boolean> rechargeAccount(@PathVariable String iban, @RequestBody Map<String, Double> request) {
+        Double amount = request.get("amount");
+        if (amount == null || amount <= 0) {
+            return ResponseEntity.badRequest().body(false); // Invalid input
+        }
+        boolean success = accountService.rechargeAccount(iban, amount);
+        return ResponseEntity.ok(success); // True if successful, False otherwise
+    }
+
+    @PostMapping("/retrieveFromAccount/{iban}")
+    public ResponseEntity<Boolean> retrieveFromAccount(@PathVariable String iban, @RequestBody Map<String, Double> request) {
+        Double amount = request.get("amount");
+        if (amount == null || amount <= 0) {
+            return ResponseEntity.badRequest().body(false); // Invalid input
+        }
+        boolean success = accountService.retrieveFromAccount(iban, amount);
+        return ResponseEntity.ok(success); // True if successful, False otherwise
+    }
+
+    @GetMapping("/getPlafond/{Iban}")
+    public ResponseEntity<Double> getPlafond(@PathVariable String iban) {
+        Double plafond = accountService.getPlafond(iban);
+        if (plafond != null) {
+            return ResponseEntity.ok(plafond);
+        } else {
+            return ResponseEntity.notFound().build(); // Account not found
+        }
+    }
+
+
+
+
+
 
 
 

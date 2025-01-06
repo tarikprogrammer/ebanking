@@ -17,8 +17,4 @@ public class TransactionRequestDto {
     private String ribSender;
     private String ribReceiver;
     private Double amount;
-    private String currency;
-    private LocalDateTime transactionDate;
-    private TransactionStatus status;
-    private String transactionNumber;
 }

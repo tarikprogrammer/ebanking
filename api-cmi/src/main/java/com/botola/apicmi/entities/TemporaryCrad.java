@@ -32,4 +32,5 @@ public class TemporaryCrad {
     private String phone;
 
     private String expireAt;
+    private String device;
 }

@@ -11,6 +11,7 @@
         <option value="$PROJECT_DIR$/Client-api/pom.xml" />
         <option value="$PROJECT_DIR$/agent-api/pom.xml" />
         <option value="$PROJECT_DIR$/Agentapi/pom.xml" />
+        <option value="$PROJECT_DIR$/service-discovery-eureka/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

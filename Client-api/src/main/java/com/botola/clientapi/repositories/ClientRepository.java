@@ -2,6 +2,7 @@ package com.botola.clientapi.repositories;
 
 
 
+import com.botola.clientapi.dto.ClientDto;
 import com.botola.clientapi.entities.Client;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

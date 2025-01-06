@@ -5,19 +5,18 @@ import com.botola.apicmi.dto.AccountDto;
 import com.botola.apicmi.entities.Account;
 import com.botola.apicmi.openfeigns.ClientConn;
 import com.botola.apicmi.repositories.AccountRepo;
-import com.google.i18n.phonenumbers.PhoneNumberUtil;
-import com.google.i18n.phonenumbers.Phonenumber;
-import feign.Client;
+
 import jakarta.mail.internet.MimeMessage;
-import jakarta.persistence.EntityNotFoundException;
+
 import lombok.RequiredArgsConstructor;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
 
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+
 import java.text.SimpleDateFormat;
 import java.util.*;
 
@@ -29,6 +28,12 @@ public class AccountService {
     private final ClientConn clientConn;
 
 
+    private String loadEmailTemplate(String templateName) throws IOException, IOException {
+        ClassPathResource resource = new ClassPathResource("templates/" + templateName);
+        return new String(resource.getInputStream().readAllBytes(), StandardCharsets.UTF_8);
+    }
+
+
 
     public boolean openAccountByAgent(AccountDto accountDto,String email) {
         boolean searchClient = clientConn.getClientByemail(email);
@@ -37,14 +42,14 @@ public class AccountService {
         List<Account> accounts= accountRepository.findByClientIdAndAccountName(clientConn.getClient(email), accountDto.getAccountName());
         System.out.println(accounts);
         if(searchClient && accounts.isEmpty()) {
-            String iban = generateIban(!(clientConn.getClientPhone(email).startsWith("+")) ? "+"+clientConn.getClientPhone(email):clientConn.getClientPhone(email));
+            String iban = generateIban();
             boolean findAcountIban =false;
 
             do{
-                 findAcountIban = accountRepository.findByIban(iban).isPresent();
+                findAcountIban = accountRepository.findByIban(iban).isPresent();
                 System.out.println("findAcountIban "+findAcountIban);
                  if(findAcountIban) {
-                     iban =generateIban(!(clientConn.getClientPhone(email).startsWith("+")) ? "+"+clientConn.getClientPhone(email):clientConn.getClientPhone(email));
+                     iban =generateIban();
                  }
             }while (findAcountIban);
 
@@ -78,13 +83,13 @@ public class AccountService {
             // second Account en EUR
 
 
-             iban = generateIban(!(clientConn.getClientPhone(email).startsWith("+")) ? "+"+clientConn.getClientPhone(email):clientConn.getClientPhone(email));
+             iban = generateIban();
              findAcountIban =false;
 
             do{
                 findAcountIban = accountRepository.findByIban(iban).isPresent();
                 if(findAcountIban) {
-                    iban =generateIban(!(clientConn.getClientPhone(email).startsWith("+")) ? "+"+clientConn.getClientPhone(email):clientConn.getClientPhone(email));
+                    iban =generateIban();
                     System.out.println("iban in "+iban);
                 }
 
@@ -120,13 +125,13 @@ public class AccountService {
             // second Account en DOLAR
 
 
-            iban = generateIban(!(clientConn.getClientPhone(email).startsWith("+")) ? "+"+clientConn.getClientPhone(email):clientConn.getClientPhone(email));
+            iban = generateIban();
             findAcountIban =false;
 
             do{
                 findAcountIban = accountRepository.findByIban(iban).isPresent();
                 if(findAcountIban) {
-                    iban =generateIban(!(clientConn.getClientPhone(email).startsWith("+")) ? "+"+clientConn.getClientPhone(email):clientConn.getClientPhone(email));
+                    iban =generateIban();
                 }
             }while (findAcountIban);
 
@@ -154,16 +159,18 @@ public class AccountService {
             Account savedAccountDOLAR =accountRepository.save(accountDOLOAR);
 
 
-            Path path = Paths.get("/Users/tarik/Desktop/ebanking/api-cmi/src/main/resources/templates/accountOpening.html");
+
+
+
 
             try {
-                String htmlContent = new String(Files.readAllBytes(path));
+                String htmlContent = loadEmailTemplate("accountOpening.html");
                 Map<String,String> maps = new HashMap<>();
                 maps.put("username",email);
                 maps.put("accountType", savedAccountMAD.getAccountName());
-                maps.put("ribMAD",savedAccountMAD.getIban().substring(10));
-                maps.put("ribEUR",savedAccountEUR.getIban().substring(10));
-                maps.put("ribUSD",savedAccountDOLAR.getIban().substring(10));
+                maps.put("ribMAD",savedAccountMAD.getIban());
+                maps.put("ribEUR",savedAccountEUR.getIban());
+                maps.put("ribUSD",savedAccountDOLAR.getIban());
                 maps.put("cvvMAD",savedAccountMAD.getCvv());
                 maps.put("cvvEUR",savedAccountEUR.getCvv());
                 maps.put("cvvUSD",savedAccountDOLAR.getCvv());
@@ -201,23 +208,19 @@ public class AccountService {
 
 
 
-    public String generateIban(String phoneNumber) {
-        PhoneNumberUtil phoneUtil = PhoneNumberUtil.getInstance();
-        try {
-            Random rd = new Random();
-            Phonenumber.PhoneNumber numberProto = phoneUtil.parse(phoneNumber, "");
-            String regionCode = phoneUtil.getRegionCodeForNumber(numberProto);
-            StringBuilder str = new StringBuilder();
-            for(int i=0;i<25;i++){
-                str.append(rd.nextInt(10));
-            }
-            String  iban = regionCode+str.toString();
-            String ibanFormat = iban.replaceAll("(.{4})", "$1 ").trim();
-            return ibanFormat;
-        }catch (Exception e) {
-            return e.getMessage();
+    public String generateIban() {
+        String s = "0123456789"; // Chiffres autorisés pour l'IBAN
+        Random rd = new Random();
+        StringBuilder sb = new StringBuilder();
+
+        int ibanLength = 24; // Longueur totale d'un IBAN typique
+        for (int i = 0; i < ibanLength; i++) {
+            // Sélectionne un caractère aléatoire dans `s`
+            char randomChar = s.charAt(rd.nextInt(s.length()));
+            sb.append(randomChar);
         }
 
+        return sb.toString();
     }
 
     public double detectePlafond(String accountType){

@@ -6,8 +6,11 @@ import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotEmpty;
 import lombok.Builder;
 
+import java.util.List;
+
 @Builder
-public record ClientDto(Long id, @NotEmpty(message = "Enter your first name") String fname, @NotEmpty(message = "Enter your last name") String lname, @NotEmpty(message = "Enter your  email") @Email(message = "Enter a valid email") String email, @NotEmpty(message = "please Confirm your email")  String confirmEmail, @NotEmpty(message = "Enter your  phone") String phone, @NotEmpty(message = "Enter your address") String address, @NotEmpty(message = "Enter your date birth") String dateBirth, String IdentityDocument, String NIdentityDocument, String TaxIdentificationNumber, String password, String CommercialRegisterRegistrationNumber, byte[] file) {
+public record ClientDto(Long id, @NotEmpty(message = "Enter your first name") String fname, @NotEmpty(message = "Enter your last name") String lname, @NotEmpty(message = "Enter your  email") @Email(message = "Enter a valid email") String email, @NotEmpty(message = "please Confirm your email")  String confirmEmail, @NotEmpty(message = "Enter your  phone") String phone, @NotEmpty(message = "Enter your address") String address, @NotEmpty(message = "Enter your date birth") String dateBirth, String IdentityDocument, String NIdentityDocument, String TaxIdentificationNumber, String password, String CommercialRegisterRegistrationNumber, byte[] file,
+                        List<AccountDto> accountDtoList) {
     public static Client toEntity(ClientDto clientDto) {
         return Client.builder()
                 .fname(clientDto.fname)
@@ -39,6 +42,24 @@ public record ClientDto(Long id, @NotEmpty(message = "Enter your first name") St
                 .NIdentityDocument(client.getNIdentityDocument())
                 .TaxIdentificationNumber(client.getTaxIdentificationNumber())
                 .CommercialRegisterRegistrationNumber(client.getCommercialRegisterRegistrationNumber())
+                .build();
+    }
+
+    public static ClientDto clientDto(Client client,List<AccountDto> accountDtoList) {
+        return ClientDto.builder()
+                .id(client.getId())
+                .fname(client.getFname())
+                .lname(client.getLname())
+                .email(client.getEmail())
+                .confirmEmail(client.getConfirmEmail())
+                .phone(client.getPhone())
+                .address(client.getAddress())
+                .dateBirth(client.getDateBirth())
+                .IdentityDocument(client.getIdentityDocument())
+                .NIdentityDocument(client.getNIdentityDocument())
+                .TaxIdentificationNumber(client.getTaxIdentificationNumber())
+                .CommercialRegisterRegistrationNumber(client.getCommercialRegisterRegistrationNumber())
+                .accountDtoList(accountDtoList)
                 .build();
     }
 }

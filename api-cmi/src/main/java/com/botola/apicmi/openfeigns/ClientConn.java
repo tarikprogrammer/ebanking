@@ -20,4 +20,7 @@ public interface ClientConn {
 
     @GetMapping("client-api/client/getclientName/{email}")
     public String getClientName(@PathVariable("email") String email);
+
+    @GetMapping("client-api/client/getclientById/{id}")
+    public String getClientById(@PathVariable Long id);
 }

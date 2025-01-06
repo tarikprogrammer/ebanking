@@ -12,6 +12,7 @@ import lombok.*;
 @Setter
 @Builder
 public class Account {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -22,6 +23,7 @@ public class Account {
     private double plafond ;
     @Column(nullable = false)
     private String iban;
+
     @Column(name = "client_id", nullable = false)
     private Long clientId;
 

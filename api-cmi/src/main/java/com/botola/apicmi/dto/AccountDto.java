@@ -30,8 +30,8 @@ public class AccountDto {
 
     private String expireAt;
 
-    private String device;
     private String accountName;
+    private String device;
 
 
     public static Account toEntity(AccountDto accountDto){

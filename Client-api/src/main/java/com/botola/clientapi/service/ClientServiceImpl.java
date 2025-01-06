@@ -1,17 +1,21 @@
 package com.botola.clientapi.service;
 
 
+import com.botola.clientapi.dto.AccountDto;
 import com.botola.clientapi.dto.ClientDto;
-import com.botola.clientapi.entities.Account;
+import com.botola.clientapi.dto.ClientDtoAcc;
+import com.botola.clientapi.dto.TempraryCardDto;
 import com.botola.clientapi.entities.Client;
 import com.botola.clientapi.entities.Otp;
 import com.botola.clientapi.openfeigns.AgentVerifyEmail;
+import com.botola.clientapi.openfeigns.ClientAccount;
 import com.botola.clientapi.repositories.ClientRepository;
 import com.botola.clientapi.repositories.OtpRepository;
 import jakarta.mail.MessagingException;
 import jakarta.mail.internet.MimeMessage;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.BeanUtils;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -35,6 +39,7 @@ public class ClientServiceImpl implements ClientService {
     private final OtpRepository otpRepository;
     private final AgentVerifyEmail agentVerifyEmail;
     private final JavaMailSender mailSender;
+    private final ClientAccount clientAccount;
 
 
     @Override
@@ -158,13 +163,19 @@ public class ClientServiceImpl implements ClientService {
     }
 
     @Override
-    public Page<Client> findAllClients(Pageable pageable,int page) {
+    public Page<ClientDtoAcc> findAllClients(Pageable pageable,int page) {
         Page<Client> clients = clientRepository.findAll(PageRequest.of(page,4));
-        clients.getContent().forEach(client -> {
-            Account account = client.getAccount();
+        Page<ClientDtoAcc> clientDtos = clients.map(ClientDtoAcc::toDto);
+        clientDtos.getContent().forEach(clientdto -> {
+            List<AccountDto> account = clientAccount.getAccounts(clientdto.getId());
+            List<TempraryCardDto>tempraryCardDtos = clientAccount.getTemporaryCards(clientdto.getEmail());
+            clientdto.setAccountDtoList(account);
+            clientdto.setTempraryCardDtos(tempraryCardDtos);
         });
-        return clients;
+        return clientDtos;
     }
+
+
 
     @Override
     public Client changeVisibility(String email) {
@@ -174,8 +185,15 @@ public class ClientServiceImpl implements ClientService {
     }
 
     @Override
-    public Client login(String email, String password) {
-        return clientRepository.findByEmailAndPassword(email, password).orElseThrow(()->new EntityNotFoundException("email or password incorrect"));
+    public ClientDtoAcc login(String email, String password) {
+        Client client =clientRepository.findByEmailAndPassword(email, password).orElseThrow(()->new EntityNotFoundException("email or password incorrect"));
+        ClientDtoAcc clientDtoAcc = new ClientDtoAcc();
+        BeanUtils.copyProperties(client, clientDtoAcc);
+        List<AccountDto>accountDtos = clientAccount.getAccounts(client.getId());
+        clientDtoAcc.setAccountDtoList(accountDtos);
+        List<TempraryCardDto> tempraryCardDtos = clientAccount.getTemporaryCards(client.getEmail());
+        clientDtoAcc.setTempraryCardDtos(tempraryCardDtos);
+        return  clientDtoAcc;
     }
 
     @Override
@@ -194,21 +212,48 @@ public class ClientServiceImpl implements ClientService {
         return clientRepository.findByEmail(email).get().getPhone();
     }
 
+
+
     @Override
     public String getClientNameByEmail(String email) {
         return clientRepository.findByEmail(email).get().getLname();
     }
 
+
+
     // generate a unique password
     private String generatePassword() {
         return "FlowPay2024" ;
     }
+
+
   // generate random otp
     private int generateOtp(){
         Random random = new Random();
         return random.nextInt(0000,9999);
     }
 
+    public String getClientById(Long id){
+        return clientRepository.findById(id).get().getEmail();
+    }
+
+    @Override
+    public ClientDtoAcc getClientByEmailAdress(String email) {
+        Optional<Client> client = clientRepository.findByEmail(email);
+        if (client.isPresent()) {
+           Client getClient = client.get();
+           ClientDtoAcc clientDtoAcc = new ClientDtoAcc();
+           BeanUtils.copyProperties(getClient,clientDtoAcc);
+           List<AccountDto>accountDtos = clientAccount.getAccounts(getClient.getId());
+           clientDtoAcc.setAccountDtoList(accountDtos);
+            List<TempraryCardDto> tempraryCardDtos = clientAccount.getTemporaryCards(getClient.getEmail());
+            clientDtoAcc.setTempraryCardDtos(tempraryCardDtos);
+            return  clientDtoAcc;
+
+        }
+
+        return null;
+    }
 
 
 }

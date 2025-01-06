@@ -11,5 +11,16 @@ public interface AccountRepo extends JpaRepository<Account, Long> {
     Optional<Account>findByIban(String iban);
     Optional<Account>findByCvv(String cvv);
     List<Account> findByClientIdAndAccountName(Long id, String accountName);
+
+    boolean existsByIban(String iban);
+
+    boolean existsByCvv(String cvv);
+
+    List<Account> findByIbanAndDeviceIn(String iban, List<String> cryptoDevices);
+    List<Account> findByIbanAndDeviceNotIn(String iban, List<String> cryptoDevices);
+
+    List<Account> findByClientIdAndDeviceIn(Long clientId, List<String> cryptoDevices);
+
+    List<Account> findByClientIdAndDeviceNotIn(Long clientId, List<String> cryptoDevices);
 }
 

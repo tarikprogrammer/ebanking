@@ -4,6 +4,8 @@ package com.botola.clientapi.entities;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.List;
+
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
@@ -31,17 +33,14 @@ public class Client {
     private byte[] imageIdentity;
 
 
-
     @OneToOne(mappedBy = "client")
     private Otp otp;
 
 
 
-    @OneToOne(mappedBy = "client",fetch = FetchType.EAGER)
-    private Account account;
 
 
-    @OneToOne(mappedBy = "client")
-    private TemporaryCard temporaryCard;
+
+
 
 }

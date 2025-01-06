@@ -2,12 +2,9 @@ package com.botola.clientapi.controller;
 
 
 import com.botola.clientapi.dto.ClientDto;
-import com.botola.clientapi.entities.TemporaryCard;
 import com.botola.clientapi.openfeigns.AgentVerifyEmail;
 
-import com.botola.clientapi.service.AccountService;
 import com.botola.clientapi.service.ClientService;
-import com.botola.clientapi.service.TemporaryCardService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import lombok.RequiredArgsConstructor;
@@ -28,8 +25,6 @@ public class ClientController {
 
     private final  ClientService clientService;
     private final  AgentVerifyEmail agentVerifyEmail;
-    private final AccountService accountService;
-    private final TemporaryCardService temporaryCardService;
 
     @GetMapping("/client/{emaiL}")
     public ResponseEntity<Boolean> getClient(@PathVariable String emaiL) {
@@ -64,10 +59,10 @@ public class ClientController {
 
 
 
-    @PostMapping("/client/openAccount/{accountType}")
+   /* @PostMapping("/client/openAccount/{accountType}")
     public ResponseEntity<?>openAccountByAgent(@RequestBody ClientDto clientDto,@PathVariable("accountType") String accountType) {
         return ResponseEntity.ok(accountService.openAccountByAgent(clientDto,accountType));
-    }
+    }*/
 
 
     @GetMapping("/client/clients/{page}")
@@ -82,10 +77,6 @@ public class ClientController {
     }
 
 
-    @PostMapping("/client/temoraryCard/{email}")
-    public ResponseEntity<?> temoraryCard(@PathVariable String email,@RequestBody TemporaryCard temporaryCard ) {
-        return ResponseEntity.ok(temporaryCardService.addTemporaryCard(temporaryCard,email));
-    }
 
 
     @PostMapping("/client/login")
@@ -115,6 +106,19 @@ public class ClientController {
     public ResponseEntity<?> getClientNameByEmail(@PathVariable String email) {
         return ResponseEntity.ok(clientService.getClientNameByEmail(email));
     }
+
+    @GetMapping("/client/getclientById/{id}")
+    public ResponseEntity<?> getClientById(@PathVariable Long id) {
+        return ResponseEntity.ok(clientService.getClientById(id));
+    }
+
+
+
+    @GetMapping("/client/getClientByEmailAddress/{email}")
+    public ResponseEntity<?> getClientByEmailAddress(@PathVariable String email) {
+        return ResponseEntity.ok(clientService.getClientByEmailAdress(email));
+    }
+
 
 
 

@@ -2,6 +2,7 @@ package com.botola.clientapi.service;
 
 
 import com.botola.clientapi.dto.ClientDto;
+import com.botola.clientapi.dto.ClientDtoAcc;
 import com.botola.clientapi.entities.Client;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -14,11 +15,13 @@ public interface ClientService {
     boolean verfiyOtp(int otp,String email);
     boolean updatePassword(String newPassword, String email);
     boolean verifyEmail(String email);
-    Page<Client> findAllClients(Pageable pageable,int page);
+    Page<ClientDtoAcc> findAllClients(Pageable pageable, int page);
     Client changeVisibility(String email);
-    Client login(String email, String password);
+    ClientDtoAcc login(String email, String password);
     boolean getClientByEmail(String email);
     Long getClientIdByEmail(String email);
     String getClientPhoneNumberByEmail(String email);
     String getClientNameByEmail(String email);
+    String getClientById(Long id);
+    ClientDtoAcc getClientByEmailAdress(String email);
 }

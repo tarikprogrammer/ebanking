@@ -44,7 +44,7 @@ public class PaiementRechargeService {
                 accountRepo.save(account);
                 return true;
             } else {
-                return false; // Insufficient balance
+                return false; // Insufficient bang lance
             }
         }
 

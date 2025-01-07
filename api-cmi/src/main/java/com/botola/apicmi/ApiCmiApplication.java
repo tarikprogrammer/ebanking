@@ -5,13 +5,13 @@ import com.botola.apicmi.repositories.FactureRepo;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.openfeign.EnableFeignClients;
+
 import org.springframework.context.annotation.Bean;
 
 import java.util.Calendar;
 
 @SpringBootApplication
-@EnableFeignClients
+
 public class ApiCmiApplication {
 
     public static void main(String[] args) {

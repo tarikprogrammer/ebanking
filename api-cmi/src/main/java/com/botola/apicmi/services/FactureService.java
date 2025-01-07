@@ -24,6 +24,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -105,8 +106,9 @@ public class FactureService {
                 }
 
             }
-            TemporaryCrad temporaryCrad = temporarycardRepo.findByIban(rib).get();
-            if(temporaryCrad != null) {
+            Optional<TemporaryCrad>temporaryCradOptional = temporarycardRepo.findByIban(rib);
+            if(temporaryCradOptional != null) {
+                TemporaryCrad temporaryCrad = temporaryCradOptional.get();
                 double solde = temporaryCrad.getSolde();
                 if(solde>=facture.getPrice()){
                     solde -= facture.getPrice();

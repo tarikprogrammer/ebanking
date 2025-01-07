@@ -1,15 +1,17 @@
 package com.botola.clientapi.openfeigns;
 
 
+import org.springframework.stereotype.Component;
 
-import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.client.RestTemplate;
 
-@FeignClient(name = "AGENTAPI")
-public interface AgentVerifyEmail {
+@Component
+public class AgentVerifyEmail {
 
-    @GetMapping("/agent-api/agent/{email}")
-    public boolean verifyEmail(@PathVariable("email") String email);
+    private  RestTemplate restTemplate = new RestTemplate();
+
+    public boolean verifyEmail(String email) {
+        String url = "http://3.84.236.79:8081/agent-api/agent/" + email;
+        return restTemplate.getForObject(url, Boolean.class);
+    }
 }
-

@@ -9,7 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="service-discovery-eureka" />
       </profile>
-      <profile name="Annotation profile for api-cmi" enabled="true">
+      <profile name="Annotation profile for Client-api" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
@@ -25,7 +25,6 @@
       <module name="agent-api" target="17" />
       <module name="api-agent" target="17" />
       <module name="api-client" target="17" />
-      <module name="service-discovery-eureka" target="17" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">

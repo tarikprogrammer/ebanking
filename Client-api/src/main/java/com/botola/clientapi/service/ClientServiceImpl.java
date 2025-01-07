@@ -16,6 +16,7 @@ import jakarta.mail.internet.MimeMessage;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.BeanUtils;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -41,6 +42,10 @@ public class ClientServiceImpl implements ClientService {
     private final JavaMailSender mailSender;
     private final ClientAccount clientAccount;
 
+    private String loadEmailTemplate(String templateName) throws IOException, IOException {
+        ClassPathResource resource = new ClassPathResource("templates/" + templateName);
+        return new String(resource.getInputStream().readAllBytes(), StandardCharsets.UTF_8);
+    }
 
     @Override
     public boolean createClientByAgent(ClientDto client, MultipartFile file) {
@@ -59,9 +64,8 @@ public class ClientServiceImpl implements ClientService {
 
                 // send Email to client
 
-                Path path = Paths.get("/Users/tarik/Desktop/ebanking/Client-api/src/main/resources/templates/sendPassword.html");
                 try {
-                    String htmlContent = new String(Files.readAllBytes(path));
+                    String htmlContent = loadEmailTemplate("sendPassword.html");
                     Map<String,String> maps = new HashMap<>();
                     maps.put("clientName",savedClient.getLname());
                     maps.put("usernameClient",savedClient.getEmail());
@@ -245,6 +249,7 @@ public class ClientServiceImpl implements ClientService {
            ClientDtoAcc clientDtoAcc = new ClientDtoAcc();
            BeanUtils.copyProperties(getClient,clientDtoAcc);
            List<AccountDto>accountDtos = clientAccount.getAccounts(getClient.getId());
+            System.out.println("================"+accountDtos);
            clientDtoAcc.setAccountDtoList(accountDtos);
             List<TempraryCardDto> tempraryCardDtos = clientAccount.getTemporaryCards(getClient.getEmail());
             clientDtoAcc.setTempraryCardDtos(tempraryCardDtos);
